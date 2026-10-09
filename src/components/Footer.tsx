@@ -18,9 +18,10 @@ export function Footer() {
 
   const productNav = [
     { label: "Aluminum Scrap", href: "/products/aluminum-scrap" },
-    { label: "Copper Scrap", href: "/products" },
-    { label: "Zinc Alloys", href: "/products" },
-    { label: "Recyclable Metals", href: "/products" },
+    { label: "Copper Scrap", href: "/products#copper-scrap" },
+    { label: "Zinc Alloys", href: "/products#zinc" },
+    { label: "Steel Products", href: "/products#steel-sheets" },
+    { label: "Fabrication Solutions", href: "/products#cable-tray" },
     // { label: t.nav.requestQuote, href: "/request-a-quote" }, // temporarily hidden (WhatsApp / Call instead)
   ];
 

@@ -72,6 +72,14 @@ Section components live flat in `src/components/` (one file per section, named `
 - Font is Hanken Grotesk via `next/font` (`--font-hanken-grotesk` → `font-sans`). Icons are the Material Symbols Outlined web font loaded in `layout.tsx`; render with `<span className="material-symbols-outlined">icon_name</span>`.
 - Shared utility classes (`.premium-card`, `.glass-panel`, `.industrial-overlay`, `.stat-card-divider`) are defined in `globals.css`.
 
+### Home page and product catalog
+
+- The home page (`src/app/page.tsx`) is intentionally minimal: `Hero` + `HomeHighlights` (highlight), `HomeProductShowcase` (product showcase), `HomeServices` (services), `InquiryBanner` (CTA). The older About/Why/Industries/Gallery/Testimonial home sections still exist in `src/components/` but are not mounted anywhere; do not re-add them to the home page without being asked.
+- Home catalog copy lives in `translations.<locale>.homePage` (highlights, products.items, services.items), each item with a Material Symbols `icon` and an `href` into `/products#<id>`.
+- The products page grid (`ProductsGrid`) renders `translations.<locale>.productsPage.categories` grouped by `group` (`metals`, `steel`, `fabrication`) with headings from `productsPage.groups`. Each category has a stable `id` (used as the DOM anchor), an `icon`, and `specs`. Only the four metal categories have photos (keyed by id in `ProductsGrid`); the rest render a navy icon tile. Add new products there in both locales.
+- The steel and fabrication range (sheets, bars, beams, coils, cable tray, roof sheets, racks, shuttering plate, grating, perforated plate, pallet, solar stands, PEB, petrol pump canopy) mirrors the reference site kksteel.com.pk; specs for the fabrication items come from that site.
+- Header nav links carry a Material icon (`icon` field on `navLinks` / `drawerSecondaryLinks` in `Header.tsx`).
+
 ### Routes
 
 `/`, `/products`, `/products/aluminum-scrap` (the only product detail page), `/industries`, `/why-choose-us`, `/faqs`, `/contact`, `/request-a-quote`, `/privacy-policy`, `/terms-of-service`, plus `error.tsx` and `not-found.tsx`. The desktop header nav shows only Home / Products / Contact; Why Choose Us, Industries and FAQs appear in the mobile drawer and footer.

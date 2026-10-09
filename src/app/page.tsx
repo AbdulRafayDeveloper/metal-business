@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { ServicesOverview } from "@/components/ServicesOverview";
-import { IndustriesServed } from "@/components/IndustriesServed";
-import { WhyChooseUs } from "@/components/WhyChooseUs";
-import { AboutMissionVision } from "@/components/AboutMissionVision";
-import { AboutValues } from "@/components/AboutValues";
-import { AboutCapabilities } from "@/components/AboutCapabilities";
-import { AboutIndustriesServed } from "@/components/AboutIndustriesServed";
-import { AboutGallery } from "@/components/AboutGallery";
+import { HomeHighlights } from "@/components/HomeHighlights";
+import { HomeProductShowcase } from "@/components/HomeProductShowcase";
+import { HomeServices } from "@/components/HomeServices";
 import { InquiryBanner } from "@/components/InquiryBanner";
-import { ContactStrip } from "@/components/ContactStrip";
 import { Footer } from "@/components/Footer";
 import { SchemaOrg, organizationSchema, websiteSchema } from "@/components/SchemaOrg";
 import { getBaseUrl, siteConfig } from "@/constants/site";
@@ -19,7 +13,7 @@ const BASE_URL = getBaseUrl();
 
 export const metadata: Metadata = {
   title:
-    `${siteConfig.name} | International Aluminum & Metal Trading Company`,
+    `${siteConfig.name} | Metal Trading, Steel Products & Fabrication in Pakistan`,
   description:
     siteConfig.description,
   alternates: {
@@ -30,9 +24,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: `${siteConfig.name} | International Aluminum & Metal Trading Company`,
+    title: `${siteConfig.name} | Metal Trading, Steel Products & Fabrication in Pakistan`,
     description:
-      "25+ years of precision metal trading. Supplying aluminum scrap, copper, zinc, and recyclable metals to manufacturers in 50+ countries. ISO certified, LME-linked pricing.",
+      "25+ years of precision metal trading. Aluminum, copper, zinc and steel products plus cable trays, racks, grating, solar stands and pre-engineered buildings. Call or WhatsApp today.",
     url: BASE_URL,
     type: "website",
     images: [
@@ -46,9 +40,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | International Aluminum & Metal Trading`,
+    title: `${siteConfig.name} | Metal Trading, Steel & Fabrication`,
     description:
-      "25+ years of precision metal trading. 50+ countries served. ISO certified. Get your metal supply quote today.",
+      "25+ years of precision metal trading. Metals, steel products and fabrication solutions across Pakistan. Call or WhatsApp today.",
     images: [`${BASE_URL}/og-image.png`],
   },
 };
@@ -60,17 +54,15 @@ export default function Home() {
       <SchemaOrg schema={websiteSchema} />
       <Header />
       <main id="main-content" className="pt-20">
+        {/* Highlight */}
         <Hero />
-        <ServicesOverview />
-        <IndustriesServed />
-        <WhyChooseUs />
-        <AboutMissionVision />
-        <AboutValues />
-        <AboutCapabilities />
-        <AboutIndustriesServed />
-        <AboutGallery />
+        <HomeHighlights />
+        {/* Product showcase */}
+        <HomeProductShowcase />
+        {/* Services */}
+        <HomeServices />
+        {/* Conversion CTA */}
         <InquiryBanner />
-        <ContactStrip />
       </main>
       <Footer />
     </>

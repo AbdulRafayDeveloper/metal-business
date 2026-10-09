@@ -19,16 +19,16 @@ const BASE_URL = getBaseUrl();
 const PAGE_URL = `${BASE_URL}/products`;
 
 export const metadata: Metadata = {
-  title: `Strategic Metal Inventory & Scrap Products | ${siteConfig.name}`,
+  title: `Metals, Steel Products & Fabrication | ${siteConfig.name}`,
   description:
-    `Explore ${siteConfig.name}'s inventory: Aluminum Scrap (6061, 6063, UBC), Copper Scrap (Berry/Candy, Birch/Cliff), Zinc Ingots, and Recyclable Non-Ferrous Alloys.`,
+    `Explore ${siteConfig.name}'s full range: aluminum, copper and zinc scrap, steel sheets, bars, beams and coils, plus cable trays, roof sheets, racks, shuttering plates, grating, perforated plates, pallets, solar stands, PEB and petrol pump canopies.`,
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: `Strategic Metal Inventory & Scrap Products | ${siteConfig.name}`,
+    title: `Metals, Steel Products & Fabrication | ${siteConfig.name}`,
     description:
-      "High-purity raw materials and recyclable metal assets for secondary smelters, foundries, and manufacturers worldwide.",
+      "Non-ferrous metals, steel products and complete fabrication solutions for industry across Pakistan. Call or WhatsApp for a price.",
     url: PAGE_URL,
     type: "website",
     images: [
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `Metal Inventory & Scrap Products | ${siteConfig.name}`,
+    title: `Metals, Steel & Fabrication | ${siteConfig.name}`,
     description:
-      "High-purity aluminum scrap, copper wire, zinc ingots, and recyclable non-ferrous alloys.",
+      "Aluminum, copper, zinc, steel products and fabrication: cable trays, racks, grating, solar stands, PEB and more.",
     images: [`${BASE_URL}/og-image.png`],
   },
 };
@@ -56,9 +56,9 @@ export default function ProductsPage() {
   ]);
 
   const pageSchema = buildWebPageSchema({
-    name: `Strategic Metal Inventory | ${siteConfig.name}`,
+    name: `Metals, Steel Products & Fabrication | ${siteConfig.name}`,
     description:
-      "Explore high-purity aluminum scrap, copper, zinc, and recyclable non-ferrous metals.",
+      "Non-ferrous metals, steel sheets, bars, beams, coils and fabricated products such as cable trays, racks, grating, solar stands and pre-engineered buildings.",
     url: PAGE_URL,
     type: "CollectionPage",
   });

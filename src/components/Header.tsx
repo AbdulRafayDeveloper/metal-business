@@ -37,16 +37,16 @@ export function Header() {
 
   // Header main nav links
   const navLinks = [
-    { href: "/", label: t.nav.home, active: isHome },
-    { href: "/products", label: t.nav.products, active: isProducts },
-    { href: "/contact", label: t.nav.contact, active: isContact },
+    { href: "/", label: t.nav.home, icon: "home", active: isHome },
+    { href: "/products", label: t.nav.products, icon: "inventory_2", active: isProducts },
+    { href: "/contact", label: t.nav.contact, icon: "call", active: isContact },
   ];
 
   // Secondary links for mobile drawer
   const drawerSecondaryLinks = [
-    { href: "/why-choose-us", label: t.nav.whyChooseUs, active: isWhyUs },
-    { href: "/industries", label: t.nav.industries, active: isIndustries },
-    { href: "/faqs", label: t.nav.faqs, active: isFAQs },
+    { href: "/why-choose-us", label: t.nav.whyChooseUs, icon: "verified", active: isWhyUs },
+    { href: "/industries", label: t.nav.industries, icon: "factory", active: isIndustries },
+    { href: "/faqs", label: t.nav.faqs, icon: "help", active: isFAQs },
   ];
 
   return (
@@ -66,11 +66,18 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`pb-1 font-bold text-sm tracking-wide transition-all ${
+              className={`pb-1 font-bold text-sm tracking-wide transition-all inline-flex items-center gap-1.5 ${
                 link.active ? "active-nav-link font-extrabold" : "hover:text-[#F87B1B]"
               }`}
               style={{ color: link.active ? "#F87B1B" : "#ffffff" }}
             >
+              <span
+                className="material-symbols-outlined text-[20px]"
+                style={{ fontVariationSettings: link.active ? "'FILL' 1" : "'FILL' 0" }}
+                aria-hidden="true"
+              >
+                {link.icon}
+              </span>
               {link.label}
             </Link>
           ))}
@@ -215,7 +222,12 @@ export function Header() {
                           color: link.active ? "#11224E" : "#ffffff",
                         }}
                       >
-                        <span>{link.label}</span>
+                        <span className="inline-flex items-center gap-2.5">
+                          <span className="material-symbols-outlined text-xl" aria-hidden="true">
+                            {link.icon}
+                          </span>
+                          {link.label}
+                        </span>
                         <span className="material-symbols-outlined text-sm">
                           arrow_forward
                         </span>
@@ -240,7 +252,12 @@ export function Header() {
                           color: link.active ? "#F87B1B" : "#ffffff",
                         }}
                       >
-                        <span>{link.label}</span>
+                        <span className="inline-flex items-center gap-2.5">
+                          <span className="material-symbols-outlined text-lg" aria-hidden="true">
+                            {link.icon}
+                          </span>
+                          {link.label}
+                        </span>
                         <span className="material-symbols-outlined text-xs">
                           arrow_forward
                         </span>
