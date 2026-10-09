@@ -8,6 +8,7 @@ import { AboutCapabilities } from "@/components/AboutCapabilities";
 import { AboutTrustStats } from "@/components/AboutTrustStats";
 import { AboutIndustriesServed } from "@/components/AboutIndustriesServed";
 import { AboutGallery } from "@/components/AboutGallery";
+import { LeadershipMessage } from "@/components/LeadershipMessage";
 import { InquiryBanner } from "@/components/InquiryBanner";
 import { Footer } from "@/components/Footer";
 import {
@@ -76,6 +77,7 @@ export default function AboutPage() {
         <AboutMissionVision />
         <AboutValues />
         <AboutCapabilities />
+        <LeadershipMessage />
         <AboutTrustStats />
         <AboutIndustriesServed />
         <AboutGallery />

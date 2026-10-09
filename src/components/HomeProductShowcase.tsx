@@ -16,6 +16,12 @@ const cardImageIds: ProductId[] = [
   "steel-bars",
   "steel-beams",
   "steel-coils",
+  "steel-pipes",
+  "angles-channels",
+  "chequered-plate",
+  "purlins",
+  "wire-mesh",
+  "scaffolding",
 ];
 
 /** Home page product showcase: photo cards for every product category. */

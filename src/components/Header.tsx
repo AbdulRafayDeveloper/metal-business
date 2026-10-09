@@ -31,6 +31,9 @@ export function Header() {
   const isProducts = pathname === "/products" || pathname.startsWith("/products/");
   const isContact = pathname === "/contact";
   const isAbout = pathname === "/about";
+  const isPeb = pathname === "/pre-engineered-buildings";
+  const isCanopy = pathname === "/petrol-pump-canopy";
+  const isCareers = pathname === "/careers";
   const isWhyUs = pathname === "/why-choose-us";
   const isFAQs = pathname === "/faqs";
   const isIndustries = pathname === "/industries";
@@ -41,6 +44,8 @@ export function Header() {
     { href: "/", label: t.nav.home, icon: "home", active: isHome },
     { href: "/about", label: t.nav.aboutUs, icon: "info", active: isAbout },
     { href: "/products", label: t.nav.products, icon: "inventory_2", active: isProducts },
+    { href: "/pre-engineered-buildings", label: t.nav.peb, icon: "warehouse", active: isPeb },
+    { href: "/petrol-pump-canopy", label: t.nav.canopy, icon: "local_gas_station", active: isCanopy },
     { href: "/contact", label: t.nav.contact, icon: "call", active: isContact },
   ];
 
@@ -49,6 +54,7 @@ export function Header() {
     { href: "/why-choose-us", label: t.nav.whyChooseUs, icon: "verified", active: isWhyUs },
     { href: "/industries", label: t.nav.industries, icon: "factory", active: isIndustries },
     { href: "/faqs", label: t.nav.faqs, icon: "help", active: isFAQs },
+    { href: "/careers", label: t.nav.careers, icon: "work", active: isCareers },
   ];
 
   return (
@@ -63,7 +69,7 @@ export function Header() {
         <Logo size="md" variant="footer" />
 
         {/* Desktop Navigation - High contrast white text with gold active indicator */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -132,8 +138,8 @@ export function Header() {
           </Link>
           */}
 
-          {/* WhatsApp / Call actions */}
-          <ContactActions variant="onDark" size="sm" />
+          {/* Call action (WhatsApp lives in the floating button) */}
+          <ContactActions variant="onDark" size="sm" channels="call" />
         </div>
 
         {/* Mobile Controls */}
@@ -285,7 +291,7 @@ export function Header() {
                 </button>
               </Link>
               */}
-              <ContactActions variant="onDark" size="md" fullWidth showNumber />
+              <ContactActions variant="onDark" size="md" fullWidth showNumber channels="call" />
             </div>
           </div>
         </div>

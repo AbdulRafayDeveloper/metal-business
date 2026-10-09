@@ -69,8 +69,11 @@ Section components live flat in `src/components/` (one file per section, named `
 ### Photos
 
 - All site photography is local under `public/images/{products,site}/` and referenced only through `src/constants/images.ts` (`productImages` keyed by product id, `siteImages` for hero/about/detail/gallery). Never hardcode image URLs in components; the old `lh3.googleusercontent.com` stock links are gone.
-- Photos are Unsplash-licensed and optimized JPEGs (about 1400px wide for cards, 2000px for heroes). Attribution lives in `src/constants/imageCredits.ts` and is rendered at `/image-credits` (linked from the footer, `noindex`). When adding or replacing a photo, add a credit entry too.
-- `/about` assembles the existing About* components (hero, overview, mission/vision, values, capabilities, trust stats, industries, gallery) plus the inquiry banner.
+- Photos are Unsplash-licensed (no attribution required) optimized JPEGs, about 1400px wide for cards and 2000px for heroes. The owner asked for no public credits page; the source list is kept outside the repo.
+- `/about` assembles the existing About* components plus `LeadershipMessage` and the inquiry banner.
+- Solution pages `/pre-engineered-buildings`, `/petrol-pump-canopy` and `/careers` are thin server pages wrapping client content components (`PebContent`, `CanopyContent`, `CareersContent`) built from the shared blocks in `PageSections.tsx` (`PageHero`, `PageIntro`, `IconTileGrid`, `ChipList`, `ProcessSteps`, `PageCta`). Their copy lives in `translations.<locale>.pebPage / canopyPage / careersPage`.
+- Home order: Hero, HomeHighlights, HomeStats, HomeAboutTeaser, HomeProductShowcase, HomeServices (shows 12, expandable), HomeFeaturedProjects, LeadershipMessage, InquiryBanner. The header shows only a Call Now button; WhatsApp lives in the floating button and page CTAs.
+- The director message in `homePage.leadership` has no name or photo yet; the owner has not supplied them.
 
 ### Styling
 

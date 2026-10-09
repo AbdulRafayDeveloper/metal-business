@@ -8,6 +8,7 @@ import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 type ContactActionsVariant = "onDark" | "onLight";
 type ContactActionsSize = "sm" | "md" | "lg";
 type ContactActionsAlign = "start" | "center" | "end";
+type ContactActionsChannels = "both" | "call";
 
 interface ContactActionsProps {
   /** "onDark" for navy/blue sections, "onLight" for white/light sections */
@@ -17,6 +18,8 @@ interface ContactActionsProps {
   fullWidth?: boolean;
   /** Horizontal alignment of the button group (ignored when fullWidth) */
   align?: ContactActionsAlign;
+  /** Which buttons to render; "call" hides the WhatsApp button */
+  channels?: ContactActionsChannels;
   /** Show the phone number under the buttons */
   showNumber?: boolean;
   className?: string;
@@ -59,6 +62,7 @@ export function ContactActions({
   size = "md",
   fullWidth = false,
   align = "start",
+  channels = "both",
   showNumber = false,
   className = "",
 }: ContactActionsProps) {
@@ -72,6 +76,7 @@ export function ContactActions({
   return (
     <div className={`flex flex-col gap-3 ${fullWidth ? "" : alignClasses[align]} ${className}`}>
       <div className={`flex ${fullWidth ? "flex-col" : `flex-wrap ${justifyClasses[align]}`} gap-3 ${width}`}>
+        {channels === "both" && (
         <a
           href={contactNumber.whatsappUrl}
           target="_blank"
@@ -82,6 +87,7 @@ export function ContactActions({
           <WhatsAppIcon className={size === "sm" ? "w-4 h-4" : "w-5 h-5"} />
           <span>{labels.whatsapp}</span>
         </a>
+        )}
         <a
           href={contactNumber.telUrl}
           aria-label={`${labels.call}: ${contactNumber.display}`}

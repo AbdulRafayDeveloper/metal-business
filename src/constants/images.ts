@@ -1,16 +1,25 @@
 /**
  * Local photo assets (public/images). All files are optimized JPEGs sourced
- * from openly licensed photo libraries; attributions live in imageCredits.ts.
+ * from Unsplash (free for commercial use, no attribution required).
  */
 const PRODUCT_IDS = [
+  // non-ferrous metals
   "aluminum-scrap",
   "copper-scrap",
   "zinc",
   "recyclable-metals",
+  // steel products
   "steel-sheets",
   "steel-bars",
   "steel-beams",
   "steel-coils",
+  "steel-pipes",
+  "angles-channels",
+  "chequered-plate",
+  "purlins",
+  "wire-mesh",
+  "scaffolding",
+  // fabrication & services
   "cable-tray",
   "roof-sheets",
   "racks",
@@ -21,6 +30,14 @@ const PRODUCT_IDS = [
   "solar-stands",
   "peb",
   "petrol-pump-canopy",
+  "mezzanine",
+  "railings",
+  "steel-gates",
+  "water-tanks",
+  "poles",
+  "cnc-cutting",
+  "welding",
+  "galvanizing",
 ] as const;
 
 export type ProductId = (typeof PRODUCT_IDS)[number];
@@ -41,6 +58,11 @@ export const siteImages = {
   detailHero: "/images/site/aluminum-detail-hero.jpg",
   sourcing: "/images/site/sourcing.jpg",
   logistics: "/images/site/logistics.jpg",
+  pebHero: "/images/site/peb-hero.jpg",
+  pebWarehouse: "/images/site/peb-warehouse.jpg",
+  canopyHero: "/images/products/petrol-pump-canopy.jpg",
+  canopyNight: "/images/site/canopy-night.jpg",
+  careersHero: "/images/site/careers-hero.jpg",
   /** Aluminum scrap detail page gallery, in display order. */
   aluminumShowcase: [
     "/images/products/aluminum-scrap.jpg",

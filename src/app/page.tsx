@@ -4,6 +4,10 @@ import { Hero } from "@/components/Hero";
 import { HomeHighlights } from "@/components/HomeHighlights";
 import { HomeProductShowcase } from "@/components/HomeProductShowcase";
 import { HomeServices } from "@/components/HomeServices";
+import { HomeStats } from "@/components/HomeStats";
+import { HomeAboutTeaser } from "@/components/HomeAboutTeaser";
+import { HomeFeaturedProjects } from "@/components/HomeFeaturedProjects";
+import { LeadershipMessage } from "@/components/LeadershipMessage";
 import { InquiryBanner } from "@/components/InquiryBanner";
 import { Footer } from "@/components/Footer";
 import { SchemaOrg, organizationSchema, websiteSchema } from "@/components/SchemaOrg";
@@ -57,10 +61,17 @@ export default function Home() {
         {/* Highlight */}
         <Hero />
         <HomeHighlights />
+        <HomeStats />
+        {/* About teaser (trust points) */}
+        <HomeAboutTeaser />
         {/* Product showcase */}
         <HomeProductShowcase />
         {/* Services */}
         <HomeServices />
+        {/* Turnkey project pages */}
+        <HomeFeaturedProjects />
+        {/* Leadership */}
+        <LeadershipMessage />
         {/* Conversion CTA */}
         <InquiryBanner />
       </main>

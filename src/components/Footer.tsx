@@ -5,34 +5,30 @@ import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { Logo } from "@/components/Logo";
 import { ContactActions } from "@/components/ContactActions";
+import { contactNumber, siteConfig } from "@/constants/site";
 
 export function Footer() {
   const { t } = useLanguage();
 
-  const companyNav = [
+  const quickLinks = [
     { label: t.nav.home, href: "/" },
     { label: t.nav.aboutUs, href: "/about" },
+    { label: t.nav.products, href: "/products" },
+    { label: t.nav.peb, href: "/pre-engineered-buildings" },
+    { label: t.nav.canopy, href: "/petrol-pump-canopy" },
     { label: t.nav.whyChooseUs, href: "/why-choose-us" },
     { label: t.nav.faqs, href: "/faqs" },
+    { label: t.nav.careers, href: "/careers" },
     { label: t.nav.contact, href: "/contact" },
-  ];
-
-  const productNav = [
-    { label: "Aluminum Scrap", href: "/products/aluminum-scrap" },
-    { label: "Copper Scrap", href: "/products#copper-scrap" },
-    { label: "Zinc Alloys", href: "/products#zinc" },
-    { label: "Steel Products", href: "/products#steel-sheets" },
-    { label: "Fabrication Solutions", href: "/products#cable-tray" },
     // { label: t.nav.requestQuote, href: "/request-a-quote" }, // temporarily hidden (WhatsApp / Call instead)
   ];
 
-  const industryNav = [
-    { label: "Recycling Industry", href: "/industries" },
-    { label: "Automotive & Manufacturing", href: "/industries" },
-    { label: "Foundries & Smelters", href: "/industries" },
-    { label: "Construction Infrastructure", href: "/industries" },
-    { label: "Industrial Processing", href: "/industries" },
-  ];
+  const fabricationLinks = t.productsPage.categories
+    .filter((c) => c.group === "fabrication")
+    .map((c) => ({ label: c.title, href: `/products#${c.id}` }));
+
+  const linkClass =
+    "text-sm text-white/90 hover:text-[#F87B1B] hover:translate-x-1 transition-all inline-block";
 
   return (
     <footer
@@ -70,18 +66,15 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Company Navigation */}
+          {/* Column 2: Quick Links */}
           <div>
             <h3 className="text-xs font-bold uppercase tracking-widest text-[#F87B1B] mb-6">
-              Company
+              {t.footer.quickLinks}
             </h3>
             <ul className="space-y-3">
-              {companyNav.map((item, index) => (
-                <li key={index}>
-                  <Link
-                    className="text-sm text-white/90 hover:text-[#F87B1B] hover:translate-x-1 transition-all inline-block"
-                    href={item.href}
-                  >
+              {quickLinks.map((item) => (
+                <li key={item.href}>
+                  <Link className={linkClass} href={item.href}>
                     {item.label}
                   </Link>
                 </li>
@@ -89,18 +82,15 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Products & Trading */}
+          {/* Column 3: Fabrication */}
           <div>
             <h3 className="text-xs font-bold uppercase tracking-widest text-[#F87B1B] mb-6">
-              Products & Inventory
+              {t.footer.fabrication}
             </h3>
             <ul className="space-y-3">
-              {productNav.map((item, index) => (
-                <li key={index}>
-                  <Link
-                    className="text-sm text-white/90 hover:text-[#F87B1B] hover:translate-x-1 transition-all inline-block"
-                    href={item.href}
-                  >
+              {fabricationLinks.map((item) => (
+                <li key={item.href}>
+                  <Link className={linkClass} href={item.href}>
                     {item.label}
                   </Link>
                 </li>
@@ -108,22 +98,32 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Industries Served */}
+          {/* Column 4: Contact */}
           <div>
             <h3 className="text-xs font-bold uppercase tracking-widest text-[#F87B1B] mb-6">
-              Industries Served
+              {t.footer.contactTitle}
             </h3>
-            <ul className="space-y-3">
-              {industryNav.map((item, index) => (
-                <li key={index}>
-                  <Link
-                    className="text-sm text-white/90 hover:text-[#F87B1B] hover:translate-x-1 transition-all inline-block"
-                    href={item.href}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+            <ul className="space-y-4 text-sm text-white/90">
+              <li className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-[#F87B1B] text-xl">location_on</span>
+                <span>{t.contact.info.addressVal}</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-[#F87B1B] text-xl">call</span>
+                <a href={contactNumber.telUrl} dir="ltr" className="hover:text-[#F87B1B] font-semibold">
+                  {contactNumber.display}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-[#F87B1B] text-xl">mail</span>
+                <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-[#F87B1B] break-all">
+                  {siteConfig.contact.email}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-[#F87B1B] text-xl">schedule</span>
+                <span>{t.contact.info.hoursVal}</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -131,7 +131,7 @@ export function Footer() {
 
       {/* Footer Bottom Bar */}
       <div className="border-t border-white/10 py-6 px-4 md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-white/85 text-xs md:text-sm">
-        <span>© 2026 AluTrade Global. All Rights Reserved. Precision in Metal Trading.</span>
+        <span>© 2026 AluTrade Global. All Rights Reserved. {t.footer.tagline}</span>
         <div className="flex gap-6">
           <Link className="hover:text-[#F87B1B] transition-colors" href="/privacy-policy">
             Privacy Policy
@@ -139,10 +139,6 @@ export function Footer() {
           <span className="text-white/20">|</span>
           <Link className="hover:text-[#F87B1B] transition-colors" href="/terms-of-service">
             Terms of Service
-          </Link>
-          <span className="text-white/20">|</span>
-          <Link className="hover:text-[#F87B1B] transition-colors" href="/image-credits">
-            Image Credits
           </Link>
         </div>
       </div>

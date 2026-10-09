@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
@@ -19,14 +19,27 @@ const serviceImages: string[] = [
   productImages["solar-stands"],
   productImages["peb"],
   productImages["petrol-pump-canopy"],
+  productImages["mezzanine"],
+  productImages["railings"],
+  productImages["steel-gates"],
+  productImages["water-tanks"],
+  productImages["poles"],
+  productImages["cnc-cutting"],
+  productImages["welding"],
+  productImages["galvanizing"],
   siteImages.sourcing,
   siteImages.logistics,
 ];
+
+const INITIAL_COUNT = 12;
 
 /** Home page services: fabrication and industrial solutions as photo cards. */
 export function HomeServices() {
   const { t } = useLanguage();
   const s = t.homePage.services;
+  const [expanded, setExpanded] = useState(false);
+  const visible = expanded ? s.items : s.items.slice(0, INITIAL_COUNT);
+  const hasMore = s.items.length > INITIAL_COUNT;
 
   return (
     <section className="py-16 md:py-section-gap px-4 md:px-margin-desktop bg-surface-container-low">
@@ -42,7 +55,7 @@ export function HomeServices() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
-          {s.items.map((item, index) => (
+          {visible.map((item, index) => (
             <Link
               key={index}
               href={item.href}
@@ -68,6 +81,19 @@ export function HomeServices() {
             </Link>
           ))}
         </div>
+
+        {hasMore && (
+          <div className="text-center mt-8">
+            <button
+              type="button"
+              onClick={() => setExpanded((v) => !v)}
+              className="inline-flex items-center gap-2 border-2 border-primary text-primary font-bold px-6 py-3 rounded-xl hover:bg-primary hover:text-white transition-colors cursor-pointer"
+            >
+              <span className="material-symbols-outlined">{expanded ? "expand_less" : "expand_more"}</span>
+              {expanded ? t.homePage.showFewerServices : `${t.homePage.showAllServices} (${s.items.length})`}
+            </button>
+          </div>
+        )}
 
         <div className="mt-12 flex flex-col items-center gap-4 text-center">
           <p className="text-base md:text-lg font-bold text-primary">{s.cta}</p>
