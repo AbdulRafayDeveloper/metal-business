@@ -36,7 +36,6 @@ export function Header() {
   const isCareers = pathname === "/careers";
   const isWhyUs = pathname === "/why-choose-us";
   const isFAQs = pathname === "/faqs";
-  const isIndustries = pathname === "/industries";
   // const isQuote = pathname === "/request-a-quote"; // used by the commented-out Request a Quote button
 
   // Header main nav links
@@ -52,7 +51,6 @@ export function Header() {
   // Secondary links for mobile drawer
   const drawerSecondaryLinks = [
     { href: "/why-choose-us", label: t.nav.whyChooseUs, icon: "verified", active: isWhyUs },
-    { href: "/industries", label: t.nav.industries, icon: "factory", active: isIndustries },
     { href: "/faqs", label: t.nav.faqs, icon: "help", active: isFAQs },
     { href: "/careers", label: t.nav.careers, icon: "work", active: isCareers },
   ];
@@ -194,12 +192,12 @@ export function Header() {
 
           {/* Sliding Side Drawer Panel (Always Left Side) */}
           <div
-            className="fixed top-0 bottom-0 left-0 w-4/5 max-w-sm text-white p-6 shadow-2xl flex flex-col justify-between gap-6 transition-transform duration-300 z-50 border-r border-white/20 overflow-y-auto"
+            className="fixed top-0 bottom-0 left-0 w-4/5 max-w-sm text-white px-5 py-4 shadow-2xl flex flex-col justify-between gap-4 transition-transform duration-300 z-50 border-r border-white/20 overflow-y-auto"
             style={{ backgroundColor: "#11224E", color: "#ffffff" }}
           >
             <div>
               {/* Drawer Top Header */}
-              <div className="flex justify-between items-center pb-6 border-b border-white/15">
+              <div className="flex justify-between items-center pb-3 border-b border-white/15">
                 <Logo size="sm" variant="footer" />
                 <button
                   onClick={() => setMobileMenuOpen(false)}
@@ -213,71 +211,47 @@ export function Header() {
               </div>
 
               {/* Drawer Navigation Links */}
-              <div className="py-6 space-y-6 text-start">
-                <div>
-                  <p className="text-[11px] font-bold text-[#F87B1B] uppercase tracking-widest mb-3">
-                    Main Navigation
-                  </p>
-                  <nav className="flex flex-col gap-2">
-                    {navLinks.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="font-bold text-base py-2.5 px-3 rounded-lg transition-colors flex items-center justify-between"
-                        style={{
-                          backgroundColor: link.active ? "#F87B1B" : "transparent",
-                          color: link.active ? "#11224E" : "#ffffff",
-                        }}
-                      >
-                        <span className="inline-flex items-center gap-2.5">
-                          <span className="material-symbols-outlined text-xl" aria-hidden="true">
-                            {link.icon}
-                          </span>
-                          {link.label}
-                        </span>
-                        <span className="material-symbols-outlined text-sm">
-                          arrow_forward
-                        </span>
-                      </Link>
-                    ))}
-                  </nav>
-                </div>
-
-                <div>
-                  <p className="text-[11px] font-bold text-[#F87B1B] uppercase tracking-widest mb-3">
-                    Explore More
-                  </p>
-                  <nav className="flex flex-col gap-2">
-                    {drawerSecondaryLinks.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="font-medium text-sm py-2 px-3 rounded-lg transition-colors flex items-center justify-between"
-                        style={{
-                          backgroundColor: link.active ? "rgba(255,255,255,0.2)" : "transparent",
-                          color: link.active ? "#F87B1B" : "#ffffff",
-                        }}
-                      >
-                        <span className="inline-flex items-center gap-2.5">
-                          <span className="material-symbols-outlined text-lg" aria-hidden="true">
-                            {link.icon}
-                          </span>
-                          {link.label}
-                        </span>
-                        <span className="material-symbols-outlined text-xs">
-                          arrow_forward
-                        </span>
-                      </Link>
-                    ))}
-                  </nav>
-                </div>
-              </div>
+              <nav className="py-3 flex flex-col gap-0.5 text-start" aria-label="Mobile navigation">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="font-bold text-[15px] py-2 px-3 rounded-lg transition-colors flex items-center gap-2.5"
+                    style={{
+                      backgroundColor: link.active ? "#F87B1B" : "transparent",
+                      color: link.active ? "#11224E" : "#ffffff",
+                    }}
+                  >
+                    <span className="material-symbols-outlined text-xl" aria-hidden="true">
+                      {link.icon}
+                    </span>
+                    {link.label}
+                  </Link>
+                ))}
+                <span className="my-2 border-t border-white/15" aria-hidden="true" />
+                {drawerSecondaryLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="font-medium text-sm py-1.5 px-3 rounded-lg transition-colors flex items-center gap-2.5"
+                    style={{
+                      backgroundColor: link.active ? "rgba(255,255,255,0.2)" : "transparent",
+                      color: link.active ? "#F87B1B" : "#ffffff",
+                    }}
+                  >
+                    <span className="material-symbols-outlined text-lg" aria-hidden="true">
+                      {link.icon}
+                    </span>
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
             </div>
 
             {/* Drawer Bottom Action CTA */}
-            <div className="pt-6 border-t border-white/15 space-y-4">
+            <div className="pt-4 border-t border-white/15">
               {/*
                 -- Request a Quote Button (temporarily replaced by WhatsApp / Call) --
 
@@ -291,7 +265,7 @@ export function Header() {
                 </button>
               </Link>
               */}
-              <ContactActions variant="onDark" size="md" fullWidth showNumber channels="call" />
+              <ContactActions variant="onDark" size="md" fullWidth channels="call" />
             </div>
           </div>
         </div>

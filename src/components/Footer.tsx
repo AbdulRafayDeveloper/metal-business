@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { Logo } from "@/components/Logo";
-import { ContactActions } from "@/components/ContactActions";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { contactNumber, siteConfig } from "@/constants/site";
 
 // Keep the footer column short; the full range lives on the products page.
@@ -71,7 +71,29 @@ export function Footer() {
           <div className="col-span-2 lg:col-span-1 space-y-5">
             <Logo variant="footer" size="md" />
             <p className="text-sm leading-relaxed text-white/70 max-w-xs">{t.footer.description}</p>
-            <ContactActions variant="onDark" size="sm" />
+            {/* Compact icon-only contact buttons; the full CTA lives in the section above the footer */}
+            <div className="flex items-center gap-3">
+              <a
+                href={contactNumber.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${t.contactActions.whatsapp}: ${contactNumber.display}`}
+                title={t.contactActions.whatsapp}
+                className="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:bg-[#1DB954] hover:scale-105 transition-all"
+              >
+                <WhatsAppIcon className="w-5 h-5" />
+              </a>
+              <a
+                href={contactNumber.telUrl}
+                aria-label={`${t.contactActions.call}: ${contactNumber.display}`}
+                title={t.contactActions.call}
+                className="w-10 h-10 rounded-full bg-[#F87B1B] text-[#11224E] flex items-center justify-center hover:bg-white hover:scale-105 transition-all"
+              >
+                <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }} aria-hidden="true">
+                  call
+                </span>
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}

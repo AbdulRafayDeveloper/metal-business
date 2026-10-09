@@ -5,7 +5,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { contactNumber } from "@/constants/site";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
-/** Floating WhatsApp button fixed to the bottom-right corner on every page. */
+/** Floating icon-only WhatsApp button fixed to the bottom-end corner on every page. */
 export function WhatsAppFloat() {
   const { t } = useLanguage();
 
@@ -15,12 +15,10 @@ export function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${t.contactActions.whatsapp}: ${contactNumber.display}`}
-      className="group fixed bottom-6 end-6 z-50 flex items-center gap-3 rounded-full bg-[#25D366] text-white shadow-2xl border-2 border-white/80 hover:bg-[#1DB954] hover:scale-105 active:scale-95 transition-all cursor-pointer ps-4 pe-4 py-3 md:ps-5"
+      title={`${t.contactActions.whatsapp}: ${contactNumber.display}`}
+      className="fixed bottom-5 end-5 md:bottom-6 md:end-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-2xl border-2 border-white/80 hover:bg-[#1DB954] hover:scale-105 active:scale-95 transition-all cursor-pointer"
     >
-      <WhatsAppIcon className="relative w-7 h-7" />
-      <span className="relative hidden md:inline font-extrabold text-sm tracking-wide">
-        {t.contactActions.whatsapp}
-      </span>
+      <WhatsAppIcon className="w-7 h-7" />
     </a>
   );
 }
