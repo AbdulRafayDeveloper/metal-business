@@ -163,7 +163,7 @@ export function Footer() {
             <span className="hidden lg:inline text-white/30"> · </span>
             <span className="hidden lg:inline">{t.footer.tagline}</span>
           </p>
-          <div className="flex items-center gap-5">
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3">
             <Link className="whitespace-nowrap hover:text-white transition-colors" href="/privacy-policy">
               Privacy Policy
             </Link>

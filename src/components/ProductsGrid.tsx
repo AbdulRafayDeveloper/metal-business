@@ -77,7 +77,7 @@ export function ProductsGrid() {
                       </div>
 
                       {/* Action */}
-                      <div className="md:col-span-3 flex md:flex-col md:items-end md:justify-between gap-4">
+                      <div className="md:col-span-3 flex flex-wrap md:flex-col md:items-end md:justify-between gap-4">
                         <a
                           href={contactNumber.telUrl}
                           dir="ltr"

@@ -58,7 +58,7 @@ export function ContactInfo() {
           </div>
 
           {/* Email */}
-          <div className="flex gap-4">
+          <div className="flex gap-4 min-w-0">
             <div className="w-12 h-12 rounded-full bg-[#11224E] text-[#F87B1B] flex items-center justify-center flex-shrink-0 font-bold">
               <span className="material-symbols-outlined text-xl">
                 mail
@@ -68,7 +68,7 @@ export function ContactInfo() {
               <p className="text-xs md:text-sm font-bold text-[#11224E] uppercase tracking-wider mb-1">
                 {t.contact.info.emailLabel}
               </p>
-              <p className="text-sm md:text-base text-[#1b3576] font-semibold hover:underline cursor-pointer">
+              <p className="text-sm md:text-base text-[#1b3576] font-semibold hover:underline cursor-pointer break-all [overflow-wrap:anywhere]">
                 {t.contact.info.emailVal}
               </p>
             </div>
