@@ -226,10 +226,17 @@ html {
   }
 }
 
+html,
+body {
+  overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100%;
+}
+
 body {
   background-color: var(--color-surface);
   color: var(--color-on-surface);
-  overflow-x: hidden;
+  position: relative;
 }
 
 /* Premium Card Hover Effect */
