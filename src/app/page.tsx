@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { HomeHighlights } from "@/components/HomeHighlights";
 import { HomeProductShowcase } from "@/components/HomeProductShowcase";
 import { HomeServices } from "@/components/HomeServices";
 import { HomeStats } from "@/components/HomeStats";
@@ -59,7 +58,6 @@ export default function Home() {
       <main id="main-content" className="pt-20">
         {/* Highlight */}
         <Hero />
-        <HomeHighlights />
         <HomeStats />
         {/* About teaser (trust points) */}
         <HomeAboutTeaser />
