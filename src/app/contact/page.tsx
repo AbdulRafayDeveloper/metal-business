@@ -17,7 +17,7 @@ const BASE_URL = getBaseUrl();
 const PAGE_URL = `${BASE_URL}/contact`;
 
 export const metadata: Metadata = {
-  title: `Contact Us | ${siteConfig.name} – Metal Trading Desk, Pakistan`,
+  title: { absolute: `Contact Us | ${siteConfig.name} – Metal Trading Desk, Pakistan` },
   description:
     `Call, WhatsApp, or email ${siteConfig.name}'s trading desk in ${siteConfig.contact.city}, Pakistan. Inquire about aluminum scrap pricing, bulk copper/zinc orders, logistics support, and export partnerships.`,
   alternates: {

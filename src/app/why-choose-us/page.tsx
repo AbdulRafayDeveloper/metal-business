@@ -18,7 +18,7 @@ const BASE_URL = getBaseUrl();
 const PAGE_URL = `${BASE_URL}/why-choose-us`;
 
 export const metadata: Metadata = {
-  title: `Why Choose Us | ${siteConfig.name} – ISO Certified Metal Supplier`,
+  title: { absolute: `Why Choose Us | ${siteConfig.name} – ISO Certified Metal Supplier` },
   description:
     `Discover why industrial manufacturers trust ${siteConfig.name}. 20+ years of expertise, 50+ countries served, 98% on-time delivery, ISO 9001 & ISO 14001 certified quality standards.`,
   alternates: {

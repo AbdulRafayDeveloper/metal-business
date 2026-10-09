@@ -59,7 +59,7 @@ export function Header() {
 
   return (
     <header
-      className={`site-header fixed top-0 start-0 w-full z-50 h-20 flex items-center transition-all duration-300 border-b border-[#F87B1B]/30 shadow-xl ${
+      className={`site-header fixed top-0 start-0 w-full z-[60] h-20 flex items-center transition-all duration-300 border-b border-[#F87B1B]/30 shadow-xl ${
         scrolled ? "bg-[#11224E] shadow-2xl" : "bg-[#11224E]"
       }`}
       style={{ backgroundColor: "#11224E", color: "#ffffff" }}
@@ -192,7 +192,7 @@ export function Header() {
 
       {/* Mobile Off-Canvas Side Drawer (Left Side) */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden">
+        <div className="fixed inset-0 z-[70] lg:hidden">
           {/* Backdrop Overlay */}
           <div
             className="fixed inset-0 bg-black/75 backdrop-blur-md transition-opacity"

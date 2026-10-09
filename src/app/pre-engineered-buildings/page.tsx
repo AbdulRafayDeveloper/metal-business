@@ -16,7 +16,7 @@ const DESCRIPTION =
   "Design, fabrication, supply and erection of pre-engineered steel buildings: industrial sheds, warehouses, factories and commercial structures across Pakistan.";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   openGraph: {

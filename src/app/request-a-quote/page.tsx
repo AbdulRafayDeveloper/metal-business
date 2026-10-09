@@ -15,7 +15,7 @@ const BASE_URL = getBaseUrl();
 const PAGE_URL = `${BASE_URL}/request-a-quote`;
 
 export const metadata: Metadata = {
-  title: `Request a Quote | ${siteConfig.name} – Instant Metal Quotation Desk`,
+  title: { absolute: `Request a Quote | ${siteConfig.name} – Instant Metal Quotation Desk` },
   description:
     `Submit your aluminum scrap, copper, or zinc trading requirements to ${siteConfig.name}. Receive a competitive LME-linked commercial offer within 24 hours.`,
   alternates: {

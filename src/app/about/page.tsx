@@ -22,7 +22,7 @@ const BASE_URL = getBaseUrl();
 const PAGE_URL = `${BASE_URL}/about`;
 
 export const metadata: Metadata = {
-  title: `About Us | ${siteConfig.name} – Metal Trading & Fabrication, Pakistan`,
+  title: { absolute: `About Us | ${siteConfig.name} – Metal Trading & Fabrication, Pakistan` },
   description:
     `Learn about ${siteConfig.name}: a ${siteConfig.contact.city}-based metal trading and steel fabrication company supplying aluminum, copper, zinc, steel products and fabricated solutions across Pakistan and abroad.`,
   alternates: {

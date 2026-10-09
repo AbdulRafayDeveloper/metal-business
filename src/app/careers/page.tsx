@@ -16,7 +16,7 @@ const DESCRIPTION =
   "Join AluTrade Global. We hire fabricators, welders, site erectors, design engineers, quality inspectors, sales and logistics staff. Apply by WhatsApp or email.";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   openGraph: {

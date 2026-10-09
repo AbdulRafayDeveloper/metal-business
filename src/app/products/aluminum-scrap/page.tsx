@@ -19,7 +19,7 @@ const BASE_URL = getBaseUrl();
 const PAGE_URL = `${BASE_URL}/products/aluminum-scrap`;
 
 export const metadata: Metadata = {
-  title: `High-Grade Aluminum Scrap (Taint/Tabor, Tense, 6063) | ${siteConfig.name}`,
+  title: { absolute: `High-Grade Aluminum Scrap (Taint/Tabor, Tense, 6063) | ${siteConfig.name}` },
   description:
     "Buy ISRI-compliant high-purity aluminum scrap. Sourced from industrial streams in bales, briquettes, or loose shredded form. 99.7% base purity for secondary smelters.",
   alternates: {

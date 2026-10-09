@@ -17,7 +17,7 @@ const BASE_URL = getBaseUrl();
 const PAGE_URL = `${BASE_URL}/faqs`;
 
 export const metadata: Metadata = {
-  title: `Frequently Asked Questions (FAQs) | ${siteConfig.name}`,
+  title: { absolute: `Frequently Asked Questions (FAQs) | ${siteConfig.name}` },
   description:
     `Find answers to common questions regarding ${siteConfig.name}'s aluminum scrap products, LME pricing, global export destinations, order minimums, and payment terms.`,
   alternates: {

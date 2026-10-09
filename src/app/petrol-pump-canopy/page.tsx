@@ -16,7 +16,7 @@ const DESCRIPTION =
   "Fuel station canopy design, structural steel fabrication, on-site installation, renovation and maintenance for new and existing petrol pumps across Pakistan.";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   openGraph: {

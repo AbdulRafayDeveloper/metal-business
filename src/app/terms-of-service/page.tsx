@@ -8,7 +8,7 @@ import { getBaseUrl, siteConfig } from "@/constants/site";
 const BASE_URL = getBaseUrl();
 
 export const metadata: Metadata = {
-  title: `Terms of Service | ${siteConfig.name}`,
+  title: { absolute: `Terms of Service | ${siteConfig.name}` },
   description:
     "Review the legal terms, trade conditions, quotation policies, and operational standards governing AluTrade Global metal trading services.",
   alternates: {

@@ -16,8 +16,7 @@ import { getBaseUrl, siteConfig } from "@/constants/site";
 const BASE_URL = getBaseUrl();
 
 export const metadata: Metadata = {
-  title:
-    `${siteConfig.name} | Metal Trading, Steel Products & Fabrication in Pakistan`,
+  title: { absolute: `${siteConfig.name} | Metal Trading, Steel Products & Fabrication in Pakistan` },
   description:
     siteConfig.description,
   alternates: {

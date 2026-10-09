@@ -8,7 +8,7 @@ import { getBaseUrl, siteConfig } from "@/constants/site";
 const BASE_URL = getBaseUrl();
 
 export const metadata: Metadata = {
-  title: `Privacy Policy | ${siteConfig.name}`,
+  title: { absolute: `Privacy Policy | ${siteConfig.name}` },
   description:
     "Learn how AluTrade Global collects, protects, and uses your personal and commercial data in accordance with international privacy regulations.",
   alternates: {

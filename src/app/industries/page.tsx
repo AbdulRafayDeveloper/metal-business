@@ -17,7 +17,7 @@ const BASE_URL = getBaseUrl();
 const PAGE_URL = `${BASE_URL}/industries`;
 
 export const metadata: Metadata = {
-  title: `Industries We Serve | ${siteConfig.name} – Heavy Industry & Manufacturing`,
+  title: { absolute: `Industries We Serve | ${siteConfig.name} – Heavy Industry & Manufacturing` },
   description:
     `${siteConfig.name} supplies raw metals and recyclable assets to recycling facilities, automotive manufacturing, foundries, construction projects, and processing plants globally.`,
   alternates: {

@@ -19,7 +19,7 @@ const BASE_URL = getBaseUrl();
 const PAGE_URL = `${BASE_URL}/products`;
 
 export const metadata: Metadata = {
-  title: `Metals, Steel Products & Fabrication | ${siteConfig.name}`,
+  title: { absolute: `Metals, Steel Products & Fabrication | ${siteConfig.name}` },
   description:
     `Explore ${siteConfig.name}'s full range: aluminum, copper and zinc scrap, steel sheets, bars, beams and coils, plus cable trays, roof sheets, racks, shuttering plates, grating, perforated plates, pallets, solar stands, PEB and petrol pump canopies.`,
   alternates: {

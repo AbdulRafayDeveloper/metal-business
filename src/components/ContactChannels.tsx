@@ -123,7 +123,9 @@ export function ContactChannels() {
                     </span>
                     <span
                       dir="ltr"
-                      className="block text-lg md:text-xl font-extrabold text-[#11224E] break-all group-hover:underline"
+                      className={`block font-extrabold text-[#11224E] break-words [overflow-wrap:anywhere] group-hover:underline ${
+                        ch.value.length > 16 ? "text-sm sm:text-base md:text-lg" : "text-base sm:text-lg md:text-xl"
+                      }`}
                     >
                       {ch.value}
                     </span>
