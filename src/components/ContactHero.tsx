@@ -34,7 +34,7 @@ export function ContactHero() {
           </span>
           <span className="font-bold">{t.contact.breadcrumbs.current}</span>
         </nav>
-        <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
+        <h1 className="display-title text-5xl md:text-7xl max-w-4xl mb-6">
           {t.contact.hero.title}
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">

@@ -59,14 +59,85 @@
   --spacing-margin-mobile: 16px;
 
   --font-sans: var(--font-hanken-grotesk);
+  --font-display: var(--font-barlow-condensed), "Arial Narrow", sans-serif;
+
+  --color-paper: #f4f1ea;
+  --color-paper-dark: #e9e4d8;
+  --color-ink: #16213a;
 }
 
 /* Base HTML & Scroll behavior */
 html {
+  font-size: 17px;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Display typography (headings) */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+
+.display-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}
+
+[dir="rtl"] .display-title {
+  font-family: var(--font-sans);
+  text-transform: none;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+/* Offset photo frame motif */
+.photo-frame {
+  position: relative;
+}
+
+.photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translate(14px, 14px);
+  border: 3px solid #F87B1B;
+  z-index: 0;
+  pointer-events: none;
+}
+
+[dir="rtl"] .photo-frame::before {
+  transform: translate(-14px, 14px);
+}
+
+.photo-frame > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hairline rules */
+.rule {
+  border-color: rgba(17, 34, 78, 0.18);
+}
+
+/* Hide scrollbar for snap strips */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
 }
 
 /* Custom Site Header High Contrast Rules */

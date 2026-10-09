@@ -34,7 +34,7 @@ export function FAQHero() {
           </span>
           <span className="font-bold">{t.faqPage.breadcrumbs.current}</span>
         </nav>
-        <h1 className="text-3xl md:text-5xl font-extrabold max-w-2xl leading-tight">
+        <h1 className="display-title text-5xl md:text-7xl max-w-4xl mb-6">
           {t.faqPage.hero.title}
         </h1>
         <p className="mt-4 text-base md:text-lg max-w-xl leading-relaxed">

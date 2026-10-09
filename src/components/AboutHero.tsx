@@ -39,7 +39,7 @@ export function AboutHero() {
             <li className="font-bold">{t.about.hero.breadcrumbAbout}</li>
           </ol>
         </nav>
-        <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
+        <h1 className="display-title text-5xl md:text-7xl">
           {t.about.hero.title}
         </h1>
       </div>

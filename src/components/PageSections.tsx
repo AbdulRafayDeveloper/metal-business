@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { ContactActions } from "@/components/ContactActions";
+import { SectionHeading } from "@/components/SectionHeading";
 
 /* Shared building blocks for the solution pages (PEB, canopy, careers). */
 
@@ -20,24 +21,24 @@ interface PageHeroProps {
 export function PageHero({ image, imageAlt, breadcrumbHome, breadcrumbCurrent, title, subtitle }: PageHeroProps) {
   const { locale } = useLanguage();
   return (
-    <section className="relative h-[60vh] min-h-[420px] flex items-center overflow-hidden">
+    <section className="relative min-h-[62vh] flex items-end overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image src={image} alt={imageAlt} fill priority sizes="100vw" className="object-cover object-center" />
         <div className="absolute inset-0 hero-overlay z-10" />
       </div>
-      <div className="relative z-20 hero-text-shadow px-4 md:px-margin-desktop max-w-container-max mx-auto w-full text-white text-start">
-        <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-sm mb-5">
+      <div className="relative z-20 hero-text-shadow px-4 md:px-margin-desktop max-w-container-max mx-auto w-full text-white text-start pt-32 pb-14 md:pb-20">
+        <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-base mb-6">
           <Link className="hover:underline" href="/">
             {breadcrumbHome}
           </Link>
-          <span className={`mx-1 material-symbols-outlined text-[14px] ${locale === "ar" ? "rotate-180" : ""}`}>
-            chevron_right
-          </span>
+          <span className={`mx-1 material-symbols-outlined text-[16px] ${locale === "ar" ? "rotate-180" : ""}`}>chevron_right</span>
           <span className="font-bold">{breadcrumbCurrent}</span>
         </nav>
-        <h1 className="text-3xl md:text-5xl font-extrabold max-w-3xl leading-tight mb-5">{title}</h1>
-        <p className="text-base md:text-lg max-w-2xl leading-relaxed mb-8">{subtitle}</p>
-        <ContactActions variant="onDark" size="lg" />
+        <div className="border-s-4 border-[#F87B1B] ps-5 md:ps-8">
+          <h1 className="display-title text-5xl md:text-7xl max-w-4xl mb-5">{title}</h1>
+          <p className="text-lg md:text-2xl max-w-2xl leading-relaxed mb-8">{subtitle}</p>
+          <ContactActions variant="onDark" size="lg" />
+        </div>
       </div>
     </section>
   );
@@ -54,21 +55,22 @@ interface IntroProps {
 export function PageIntro({ tag, title, paragraphs, image, imageAlt }: IntroProps) {
   return (
     <section className="py-16 md:py-section-gap px-4 md:px-margin-desktop">
-      <div className={`max-w-container-max mx-auto grid grid-cols-1 ${image ? "lg:grid-cols-2" : ""} gap-10 lg:gap-16 items-center`}>
-        <div className="text-start">
-          <span className="text-[#F87B1B] font-bold tracking-widest text-xs md:text-sm uppercase block mb-3">{tag}</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-primary leading-tight mb-6">{title}</h2>
-          <div className="space-y-4">
+      <div className={`max-w-container-max mx-auto grid grid-cols-1 ${image ? "lg:grid-cols-12" : ""} gap-12 lg:gap-16 items-center`}>
+        <div className={image ? "lg:col-span-7" : ""}>
+          <SectionHeading kicker={tag} title={title} />
+          <div className="mt-6 space-y-5 max-w-3xl text-start">
             {paragraphs.map((p, i) => (
-              <p key={i} className="text-base md:text-lg text-secondary leading-relaxed">
+              <p key={i} className={`leading-relaxed ${i === 0 ? "text-xl md:text-2xl text-on-surface" : "text-lg md:text-xl text-secondary"}`}>
                 {p}
               </p>
             ))}
           </div>
         </div>
         {image && (
-          <div className="relative h-[300px] md:h-[420px] rounded-2xl overflow-hidden shadow-xl border border-outline-variant">
-            <Image src={image} alt={imageAlt ?? title} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+          <div className="lg:col-span-5 photo-frame me-4">
+            <div className="relative h-[320px] md:h-[460px] overflow-hidden">
+              <Image src={image} alt={imageAlt ?? title} fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-cover" />
+            </div>
           </div>
         )}
       </div>
@@ -84,31 +86,24 @@ interface IconTileGridProps {
   columns?: 3 | 4 | 5;
 }
 
-export function IconTileGrid({ title, desc, items, tone = "light", columns = 5 }: IconTileGridProps) {
-  const cols = columns === 3 ? "lg:grid-cols-3" : columns === 4 ? "lg:grid-cols-4" : "lg:grid-cols-5";
+/** A numbered, ruled index list in two columns (replaces the old tile grid). */
+export function IconTileGrid({ title, desc, items, tone = "light" }: IconTileGridProps) {
   const dark = tone === "dark";
   return (
-    <section className={`py-16 md:py-section-gap px-4 md:px-margin-desktop ${dark ? "bg-primary text-white" : "bg-surface-container-low"}`}>
-      <div className="max-w-container-max mx-auto">
-        <div className="text-center mb-12">
-          <h2 className={`text-3xl md:text-4xl font-extrabold ${dark ? "text-white" : "text-primary"}`}>{title}</h2>
-          {desc && <p className={`mt-4 max-w-2xl mx-auto text-base md:text-lg ${dark ? "text-white/90" : "text-secondary"}`}>{desc}</p>}
+    <section className={`py-16 md:py-section-gap px-4 md:px-margin-desktop ${dark ? "bg-primary text-white" : "bg-paper"}`}>
+      <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div className="lg:col-span-4">
+          <SectionHeading title={title} lede={desc} tone={tone} size="md" className="lg:sticky lg:top-28" />
         </div>
-        <div className={`grid grid-cols-2 sm:grid-cols-3 ${cols} gap-4 md:gap-gutter`}>
+        <ol className={`lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-x-10 border-t ${dark ? "border-white/20" : "rule"}`}>
           {items.map((item, i) => (
-            <div
-              key={i}
-              className={`rounded-2xl p-5 md:p-6 flex flex-col items-center text-center gap-3 premium-card ${
-                dark ? "bg-white/5 border border-white/10" : "bg-white border border-outline-variant shadow-sm"
-              }`}
-            >
-              <span className={`w-12 h-12 rounded-xl flex items-center justify-center ${dark ? "bg-[#F87B1B] text-[#11224E]" : "bg-primary text-[#F87B1B]"}`}>
-                <span className="material-symbols-outlined text-2xl">{item.icon}</span>
-              </span>
-              <span className={`font-bold text-sm md:text-base ${dark ? "text-white" : "text-primary"}`}>{item.title}</span>
-            </div>
+            <li key={i} className={`flex items-center gap-4 py-4 border-b ${dark ? "border-white/20" : "rule"} text-start`}>
+              <span className={`font-display text-lg font-semibold w-8 ${dark ? "text-[#F87B1B]" : "text-primary/50"}`}>{String(i + 1).padStart(2, "0")}</span>
+              <span className={`material-symbols-outlined text-3xl ${dark ? "text-[#F87B1B]" : "text-primary"}`}>{item.icon}</span>
+              <span className={`font-display text-2xl font-bold uppercase leading-none ${dark ? "text-white" : "text-primary"}`}>{item.title}</span>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );
@@ -119,24 +114,25 @@ interface ChipListProps {
   items: ReadonlyArray<string>;
 }
 
+/** Industries as one large running line separated by orange dots. */
 export function ChipList({ title, items }: ChipListProps) {
   return (
-    <section className="py-12 md:py-16 px-4 md:px-margin-desktop">
-      <div className="max-w-container-max mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-extrabold text-primary mb-8">{title}</h2>
-        <div className="flex flex-wrap justify-center gap-3">
+    <section className="py-14 md:py-20 px-4 md:px-margin-desktop border-b rule">
+      <div className="max-w-container-max mx-auto text-start">
+        <p className="font-display text-lg md:text-xl font-semibold uppercase tracking-[0.2em] text-[#F87B1B] mb-4">{title}</p>
+        <p className="font-display text-2xl sm:text-3xl md:text-5xl font-bold uppercase text-primary leading-tight">
           {items.map((item, i) => (
-            <span
-              key={i}
-              className="inline-flex items-center gap-2 bg-white border border-outline-variant rounded-full px-5 py-2.5 text-sm font-bold text-primary shadow-sm"
-            >
-              <span className="material-symbols-outlined text-[#1DB954] text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>
-                check_circle
-              </span>
-              {item}
-            </span>
+            <React.Fragment key={i}>
+              {i > 0 && (
+                <>
+                  {" "}
+                  <span className="text-[#F87B1B] mx-2 md:mx-3" aria-hidden="true">&bull;</span>{" "}
+                </>
+              )}
+              <span className="sm:whitespace-nowrap">{item}</span>
+            </React.Fragment>
           ))}
-        </div>
+        </p>
       </div>
     </section>
   );
@@ -147,19 +143,22 @@ interface ProcessStepsProps {
   steps: ReadonlyArray<{ title: string; desc: string }>;
 }
 
+/** Process as a timeline: a continuous line with numbered markers (no cards). */
 export function ProcessSteps({ title, steps }: ProcessStepsProps) {
   return (
-    <section className="py-16 md:py-section-gap px-4 md:px-margin-desktop bg-surface-container-low">
+    <section className="py-16 md:py-section-gap px-4 md:px-margin-desktop">
       <div className="max-w-container-max mx-auto">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-primary text-center mb-12">{title}</h2>
-        <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+        <SectionHeading title={title} size="md" className="mb-12" />
+        <ol className="relative grid grid-cols-1 md:grid-cols-4 gap-y-10 md:gap-x-8">
+          <span className="hidden md:block absolute top-6 inset-x-0 h-0.5 bg-primary/20" aria-hidden="true" />
+          <span className="md:hidden absolute top-0 bottom-0 start-6 w-0.5 bg-primary/20" aria-hidden="true" />
           {steps.map((step, i) => (
-            <li key={i} className="bg-white rounded-2xl border border-outline-variant shadow-sm p-6 text-start relative premium-card">
-              <span className="absolute -top-4 start-6 w-10 h-10 rounded-full bg-[#F87B1B] text-[#11224E] font-extrabold flex items-center justify-center shadow-md">
+            <li key={i} className="relative ps-16 md:ps-0 text-start">
+              <span className="absolute start-0 top-0 md:static w-12 h-12 rounded-full bg-primary text-[#F87B1B] font-display text-2xl font-bold flex items-center justify-center ring-8 ring-white md:mb-6">
                 {i + 1}
               </span>
-              <h3 className="text-lg font-bold text-primary mt-4 mb-2">{step.title}</h3>
-              <p className="text-sm text-secondary leading-relaxed">{step.desc}</p>
+              <h3 className="font-display text-2xl md:text-3xl font-bold uppercase text-primary leading-none mb-2">{step.title}</h3>
+              <p className="text-base md:text-lg text-secondary leading-relaxed">{step.desc}</p>
             </li>
           ))}
         </ol>
@@ -175,13 +174,14 @@ interface PageCtaProps {
 
 export function PageCta({ title, desc }: PageCtaProps) {
   return (
-    <section className="py-16 px-4 md:px-margin-desktop">
-      <div className="max-w-container-max mx-auto bg-primary rounded-2xl p-8 md:p-14 text-center text-white relative overflow-hidden">
-        <div className="absolute top-0 end-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-        <div className="relative">
-          <h2 className="text-2xl md:text-4xl font-extrabold mb-4">{title}</h2>
-          <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-8">{desc}</p>
-          <ContactActions variant="onDark" size="lg" align="center" showNumber />
+    <section className="bg-primary border-t-8 border-[#F87B1B]">
+      <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop py-16 md:py-20 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="lg:col-span-7 text-start">
+          <h2 className="display-title text-4xl md:text-6xl text-white mb-4">{title}</h2>
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">{desc}</p>
+        </div>
+        <div className="lg:col-span-5 lg:justify-self-end">
+          <ContactActions variant="onDark" size="lg" showNumber />
         </div>
       </div>
     </section>

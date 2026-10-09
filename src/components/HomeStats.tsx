@@ -3,28 +3,26 @@
 import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
-/** Trust numbers band (years, projects, clients, quality). */
+/** Trust numbers: a sentence on the left, oversized numerals on the right. */
 export function HomeStats() {
   const { t } = useLanguage();
+  const s = t.homePage.statsIntro;
 
   return (
-    <section className="bg-primary text-white py-12 md:py-16 px-4 md:px-margin-desktop relative overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-10 pointer-events-none"
-        style={{
-          backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
-        }}
-      />
-      <div className="relative max-w-container-max mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-gutter text-center">
-        {t.homePage.stats.map((stat, index) => (
-          <div key={index} className="px-2">
-            <p className="text-4xl md:text-5xl font-extrabold text-[#F87B1B] leading-none">{stat.value}</p>
-            <p className="mt-3 text-xs md:text-sm font-bold uppercase tracking-widest text-white/90">
-              {stat.label}
-            </p>
-          </div>
-        ))}
+    <section className="bg-primary text-white">
+      <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop py-14 md:py-20 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="lg:col-span-4 text-start">
+          <p className="font-display text-lg md:text-xl font-semibold uppercase tracking-[0.2em] text-[#F87B1B] mb-3">{s.kicker}</p>
+          <h2 className="display-title text-4xl md:text-5xl">{s.title}</h2>
+        </div>
+        <dl className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-y-8">
+          {t.homePage.stats.map((stat, index) => (
+            <div key={index} className={`text-start px-4 md:px-6 ${index > 0 ? "md:border-s border-white/20" : ""} ${index % 2 === 1 ? "border-s border-white/20 md:border-s" : ""}`}>
+              <dd className="font-display text-6xl md:text-7xl font-bold text-[#F87B1B] leading-none">{stat.value}</dd>
+              <dt className="mt-3 text-base md:text-lg font-semibold text-white/90">{stat.label}</dt>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

@@ -3,47 +3,38 @@
 import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
+/** Big numerals in a row, then a running line of standards. */
 export function AboutTrustStats() {
   const { t } = useLanguage();
 
-  const standardIcons = ["verified", "eco", "security", "shield"];
-
   return (
     <>
-      {/* 9. Why Clients Trust Us */}
       <section className="py-16 md:py-section-gap px-4 md:px-margin-desktop max-w-container-max mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <dl className="grid grid-cols-1 md:grid-cols-3 md:divide-x rule gap-y-10">
           {t.about.trust.items.map((item, index) => (
-            <div
-              key={index}
-              className="text-center p-8 bg-surface-container-low rounded-2xl border border-outline-variant/10 shadow-sm"
-            >
-              <h3 className="text-4xl md:text-5xl font-extrabold text-primary mb-2">
-                {item.value}
-              </h3>
-              <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-secondary mb-4">
-                {item.label}
-              </p>
-              <p className="text-sm md:text-base text-on-surface-variant">
-                {item.desc}
-              </p>
+            <div key={index} className={`text-start ${index > 0 ? "md:ps-10" : ""}`}>
+              <dd className="font-display text-7xl md:text-8xl font-bold text-primary leading-none">{item.value}</dd>
+              <dt className="mt-3 font-display text-xl md:text-2xl font-semibold uppercase tracking-wide text-[#F87B1B]">{item.label}</dt>
+              <p className="mt-3 text-base md:text-lg text-secondary leading-relaxed max-w-xs">{item.desc}</p>
             </div>
           ))}
-        </div>
+        </dl>
       </section>
 
-      {/* 8. Quality Standards */}
-      <section className="py-12 border-y border-outline-variant/30 bg-surface/50">
-        <div className="px-4 md:px-margin-desktop max-w-container-max mx-auto flex flex-wrap justify-center gap-8 md:gap-12 items-center">
+      <section className="bg-primary text-white py-6 overflow-hidden">
+        <p className="px-4 md:px-margin-desktop max-w-container-max mx-auto font-display text-2xl md:text-3xl font-semibold uppercase tracking-[0.15em] text-center">
           {t.about.standards.items.map((std, index) => (
-            <div key={index} className="flex items-center gap-2 text-primary">
-              <span className="material-symbols-outlined text-4xl">
-                {standardIcons[index]}
-              </span>
-              <span className="font-bold text-lg md:text-xl">{std}</span>
-            </div>
+            <React.Fragment key={index}>
+              {index > 0 && (
+                <>
+                  {" "}
+                  <span className="text-[#F87B1B] mx-3" aria-hidden="true">/</span>{" "}
+                </>
+              )}
+              <span className="whitespace-nowrap">{std}</span>
+            </React.Fragment>
           ))}
-        </div>
+        </p>
       </section>
     </>
   );

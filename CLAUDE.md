@@ -75,6 +75,13 @@ Section components live flat in `src/components/` (one file per section, named `
 - Home order: Hero, HomeHighlights, HomeStats, HomeAboutTeaser, HomeProductShowcase, HomeServices (shows 12, expandable), HomeFeaturedProjects, LeadershipMessage, InquiryBanner. The header shows only a Call Now button; WhatsApp lives in the floating button and page CTAs.
 - The director message in `homePage.leadership` has no name or photo yet; the owner has not supplied them.
 
+### Design language (Oct 2026 redesign)
+
+- Industrial editorial, deliberately unlike the kksteel.com.pk reference: Barlow Condensed display headings (`.display-title`, uppercase, via `--font-display`), Hanken Grotesk body at a larger root size (17px, 18px from md) for older readers, warm `bg-paper` bands, hairline rules (`.rule`), numbered lists (01, 02…), the offset orange `.photo-frame` motif, and full-bleed navy bands. Avoid rounded card grids; prefer divided lists, ruled columns, timelines, and sticky-left/list-right layouts.
+- `SectionHeading` (orange bar + kicker + condensed title + lede) is the standard section opener. Buttons are `rounded-md`, not pill/xl.
+- Arabic falls back to the sans font for display titles (`[dir="rtl"] .display-title`).
+- Header nav always uses the short labels (PEB, Canopy); icons appear only at 2xl.
+
 ### Styling
 
 - Tailwind v4, CSS-first: there is no `tailwind.config`. Theme tokens are declared in `@theme` in `src/app/globals.css` and used as normal utilities. Palette is Material-style: `bg-primary` / navy `#11224E`, orange accent `bg-tertiary-fixed-dim` / `#F87B1B`, `bg-surface*`, `text-on-surface*`, etc. Layout tokens: `max-w-container-max` (1280px), `px-margin-desktop` (40px), `gap-gutter` (24px), `py-section-gap` (80px).

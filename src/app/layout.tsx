@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Hanken_Grotesk } from "next/font/google";
+import { Barlow_Condensed, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/providers/LanguageProvider";
 import { getBaseUrl, siteConfig } from "@/constants/site";
@@ -12,6 +12,13 @@ const hankenGrotesk = Hanken_Grotesk({
   variable: "--font-hanken-grotesk",
   subsets: ["latin"],
   weight: ["400", "500", "700", "800"],
+  display: "swap",
+});
+
+const barlowCondensed = Barlow_Condensed({
+  variable: "--font-barlow-condensed",
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -126,7 +133,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${hankenGrotesk.variable} h-full antialiased`}
+      className={`${hankenGrotesk.variable} ${barlowCondensed.variable} h-full antialiased`}
     >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />

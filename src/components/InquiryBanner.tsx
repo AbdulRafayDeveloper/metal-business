@@ -8,21 +8,20 @@ export interface InquiryBannerProps {
   isAboutPage?: boolean;
 }
 
+/** Full-bleed closing band with the direct contact actions. */
 export function InquiryBanner({ isAboutPage = false }: InquiryBannerProps) {
   const { t } = useLanguage();
 
   return (
-    <section className="py-8 px-4 md:px-margin-desktop">
-      <div className="max-w-container-max mx-auto bg-primary rounded-2xl p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 text-start">
-        <div className="relative z-10">
-          <h2 className="text-2xl md:text-4xl font-bold text-white max-w-xl leading-tight">
-            {t.inquiry.title}
-          </h2>
-          <p className="text-white/90 text-base md:text-lg mt-4">
+    <section className="bg-primary border-t-8 border-[#F87B1B]">
+      <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop py-16 md:py-20 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="lg:col-span-7 text-start">
+          <h2 className="display-title text-4xl md:text-6xl text-white">{t.inquiry.title}</h2>
+          <p className="text-lg md:text-xl text-white/90 mt-5 max-w-2xl leading-relaxed">
             {isAboutPage ? t.inquiry.subtitleAbout : t.inquiry.subtitle}
           </p>
         </div>
-        <div className="relative z-10 flex-shrink-0">
+        <div className="lg:col-span-5 lg:justify-self-end">
           {/*
             -- Request a Quote Button (temporarily replaced by WhatsApp / Call) --
 
@@ -32,10 +31,6 @@ export function InquiryBanner({ isAboutPage = false }: InquiryBannerProps) {
           */}
           <ContactActions variant="onDark" size="lg" showNumber />
         </div>
-
-        {/* Background texture/circles */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/4"></div>
       </div>
     </section>
   );

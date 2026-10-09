@@ -46,7 +46,7 @@ export function WhyHero() {
         </nav>
 
         {/* Title with golden accent on last line */}
-        <h1 className="text-3xl md:text-5xl font-extrabold max-w-2xl leading-tight mb-4">
+        <h1 className="display-title text-5xl md:text-7xl max-w-4xl mb-6">
           {titleParts.plain}
           <br />
           <span className="text-[#F87B1B]">{titleParts.accent}</span>

@@ -8,6 +8,7 @@ export const translations = {
       whatsappCall: "WhatsApp / Call",
     },
     homePage: {
+      statsIntro: { kicker: "Track record", title: "Numbers that back our word" },
       stats: [
         { value: "25+", label: "Years of Excellence" },
         { value: "250+", label: "Projects Completed" },
@@ -120,7 +121,9 @@ export const translations = {
       fabrication: "Fabrication",
     },
     hero: {
-      title: "Your Trusted Global Partner in Aluminum & Metal Trading",
+      overline: "Lahore, Pakistan · Est. 2000",
+      title: "Metal Trading & Steel Fabrication You Can Rely On",
+      subtitle: "Aluminum, copper, zinc and steel supply plus cable trays, racks, grating, canopies and pre-engineered buildings. One call, nationwide delivery.",
       requestQuote: "Request a Quote",
       exploreProducts: "Explore Products",
       bgAlt: "Wide-angle professional shot of a massive, well-organized industrial aluminum warehouse.",
@@ -752,6 +755,7 @@ export const translations = {
           { title: "Sustainable Sourcing", desc: "Prioritizing high-yield scrap to reduce carbon footprints.", icon: "eco" },
         ],
       },
+      itemsLabel: "items",
       groups: {
         metals: "Non-Ferrous Metals & Scrap",
         steel: "Steel Products",
@@ -1398,6 +1402,7 @@ export const translations = {
         { title: "Global Reach", desc: "Logistics hubs in 12 countries connecting global supply with local demand.", icon: "language" },
       ],
       solutions: {
+        scrollHint: "Scroll",
         title: "Comprehensive Solutions",
         items: [
           { title: "Metal Sourcing", desc: "Global network for high-grade aluminum, recycled metal, and scrap solutions.", bgAlt: "A massive industrial warehouse filled with pristine stacks of high-grade aluminum ingots." },
@@ -1570,6 +1575,7 @@ export const translations = {
       whatsappCall: "واتساب / اتصال",
     },
     homePage: {
+      statsIntro: { kicker: "سجلنا", title: "أرقام تدعم كلمتنا" },
       stats: [
         { value: "+25", label: "عامًا من التميز" },
         { value: "+250", label: "مشروعًا منجزًا" },
@@ -1682,7 +1688,9 @@ export const translations = {
       fabrication: "التصنيع",
     },
     hero: {
-      title: "شريكك العالمي الموثوق في تجارة الألومنيوم والمعادن",
+      overline: "لاهور، باكستان · منذ 2000",
+      title: "تجارة معادن وتصنيع فولاذ يمكنك الاعتماد عليه",
+      subtitle: "توريد الألومنيوم والنحاس والزنك والفولاذ بالإضافة إلى حوامل الكابلات والرفوف والشبك المعدني والمظلات والمباني الجاهزة. اتصال واحد وتوصيل إلى جميع أنحاء البلاد.",
       requestQuote: "طلب تسعيرة",
       exploreProducts: "استكشاف المنتجات",
       bgAlt: "لقطة احترافية واسعة الزاوية لمستودع ألومنيوم صناعي ضخم ومنظم جيدًا.",
@@ -2314,6 +2322,7 @@ export const translations = {
           { title: "مصادر مستدامة", desc: "إعطاء الأولوية للخردة ذات العائد المرتفع لتقليل البصمة الكربونية.", icon: "eco" },
         ],
       },
+      itemsLabel: "عنصرًا",
       groups: {
         metals: "المعادن غير الحديدية والخردة",
         steel: "منتجات الفولاذ",
@@ -2960,6 +2969,7 @@ export const translations = {
         { title: "الوصول العالمي", desc: "مراكز لوجستية في 12 دولة تربط العرض العالمي بالطلب المحلي.", icon: "language" },
       ],
       solutions: {
+        scrollHint: "مرّر",
         title: "حلول شاملة",
         items: [
           { title: "توريد المعادن", desc: "شبكة عالمية للألومنيوم عالي الجودة والمعادن المعاد تدويرها وحلول الخردة.", bgAlt: "مستودع صناعي ضخم مليء بأكوام مرتبة من سبائك الألومنيوم عالية الجودة." },

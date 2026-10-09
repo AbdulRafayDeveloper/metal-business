@@ -34,7 +34,7 @@ export function ServicesHero() {
           </span>
           <span className="font-bold">{t.servicesPage.breadcrumbs.current}</span>
         </nav>
-        <h1 className="text-3xl md:text-5xl font-extrabold max-w-2xl leading-tight text-white">
+        <h1 className="display-title text-5xl md:text-7xl max-w-4xl mb-6">
           {t.servicesPage.hero.title}
         </h1>
       </div>

@@ -34,7 +34,7 @@ export function ProductsHero() {
           </span>
           <span className="font-bold">{t.productsPage.breadcrumbs.current}</span>
         </nav>
-        <h1 className="text-3xl md:text-5xl font-extrabold max-w-2xl leading-tight mb-6">
+        <h1 className="display-title text-5xl md:text-7xl max-w-4xl mb-6">
           {t.productsPage.hero.title}
         </h1>
         <p className="text-base md:text-lg max-w-xl leading-relaxed">

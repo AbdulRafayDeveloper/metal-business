@@ -34,7 +34,7 @@ export function IndustriesHero() {
           </span>
           <span className="font-bold">{t.industriesPage.breadcrumbs.current}</span>
         </nav>
-        <h1 className="text-3xl md:text-5xl font-extrabold max-w-2xl leading-tight">
+        <h1 className="display-title text-5xl md:text-7xl max-w-4xl mb-6">
           {t.industriesPage.hero.title}
         </h1>
         <div className="w-24 h-1 bg-tertiary-fixed-dim mt-8 rounded-full"></div>

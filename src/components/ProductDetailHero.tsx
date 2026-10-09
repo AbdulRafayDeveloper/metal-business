@@ -39,7 +39,7 @@ export function ProductDetailHero() {
             {t.scrapDetail.breadcrumbs.current}
           </span>
         </nav>
-        <h1 className="text-3xl md:text-5xl font-extrabold text-on-primary max-w-3xl leading-tight">
+        <h1 className="display-title text-5xl md:text-7xl max-w-4xl mb-6">
           {t.scrapDetail.hero.title}
         </h1>
         <p className="mt-4 text-on-primary/90 text-lg md:text-xl max-w-2xl leading-relaxed">

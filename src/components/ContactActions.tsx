@@ -70,7 +70,7 @@ export function ContactActions({
   const labels = t.contactActions;
 
   const base =
-    "inline-flex items-center justify-center font-extrabold rounded-xl border shadow-md transition-all hover:scale-[1.03] active:scale-95 cursor-pointer whitespace-nowrap";
+    "inline-flex items-center justify-center font-extrabold rounded-md border shadow-md transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer whitespace-nowrap";
   const width = fullWidth ? "w-full" : "";
 
   return (

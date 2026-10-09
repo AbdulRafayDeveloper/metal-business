@@ -64,42 +64,35 @@ export function Header() {
       }`}
       style={{ backgroundColor: "#11224E", color: "#ffffff" }}
     >
-      <div className="flex justify-between items-center px-4 md:px-margin-desktop max-w-container-max mx-auto w-full">
+      <div className="flex justify-between items-center gap-2 px-4 md:px-margin-desktop max-w-container-max mx-auto w-full min-w-0 overflow-hidden">
         {/* Brand Logo Component - Always high-contrast white & gold */}
         <Logo size="md" variant="footer" />
 
         {/* Desktop Navigation - High contrast white text with gold active indicator */}
-        <nav className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8">
+        <nav className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`pb-1 font-bold text-[13px] xl:text-sm tracking-wide whitespace-nowrap transition-all inline-flex items-center gap-1.5 ${
+              className={`pb-1 font-bold text-[13px] xl:text-[14px] tracking-wide whitespace-nowrap transition-all inline-flex items-center gap-1.5 ${
                 link.active ? "active-nav-link font-extrabold" : "hover:text-[#F87B1B]"
               }`}
               style={{ color: link.active ? "#F87B1B" : "#ffffff" }}
             >
               <span
-                className="material-symbols-outlined text-[20px] hidden xl:inline"
+                className="material-symbols-outlined text-[20px] hidden 2xl:inline"
                 style={{ fontVariationSettings: link.active ? "'FILL' 1" : "'FILL' 0" }}
                 aria-hidden="true"
               >
                 {link.icon}
               </span>
-              {link.shortLabel ? (
-                <>
-                  <span className="xl:hidden">{link.shortLabel}</span>
-                  <span className="hidden xl:inline">{link.label}</span>
-                </>
-              ) : (
-                link.label
-              )}
+              {link.shortLabel ?? link.label}
             </Link>
           ))}
         </nav>
 
         {/* Action Panel */}
-        <div className="hidden lg:flex items-center gap-4 xl:gap-6 flex-shrink-0">
+        <div className="hidden lg:flex items-center gap-4 flex-shrink-0 ms-4">
           {/*
             -- Language Switcher (temporarily disabled; English only for now) --
             Requires `locale` and `setLocale` from useLanguage().
@@ -201,7 +194,7 @@ export function Header() {
 
           {/* Sliding Side Drawer Panel (Always Left Side) */}
           <div
-            className="fixed top-0 bottom-0 left-0 w-4/5 max-w-sm text-white p-6 shadow-2xl flex flex-col justify-between transition-transform duration-300 z-50 border-r border-white/20"
+            className="fixed top-0 bottom-0 left-0 w-4/5 max-w-sm text-white p-6 shadow-2xl flex flex-col justify-between gap-6 transition-transform duration-300 z-50 border-r border-white/20 overflow-y-auto"
             style={{ backgroundColor: "#11224E", color: "#ffffff" }}
           >
             <div>

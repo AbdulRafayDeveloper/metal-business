@@ -12,7 +12,7 @@ export function AboutCapabilities() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
           {/* Left Side: Capabilities list */}
           <div className="text-start">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 leading-tight">
+            <h2 className="display-title text-4xl md:text-6xl mb-8">
               {t.about.capabilities.title}
             </h2>
             <ul className="space-y-8">
@@ -22,10 +22,10 @@ export function AboutCapabilities() {
                     {item.icon}
                   </span>
                   <div>
-                    <h4 className="text-xl font-bold mb-1">
+                    <h4 className="font-display text-2xl md:text-3xl font-bold uppercase leading-none mb-2">
                       {item.title}
                     </h4>
-                    <p className="text-sm md:text-base opacity-95 leading-relaxed">
+                    <p className="text-base md:text-lg text-white/90 leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
@@ -34,25 +34,18 @@ export function AboutCapabilities() {
             </ul>
           </div>
 
-          {/* Right Side: Compliance cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12 lg:mt-0 text-start">
+          {/* Right Side: compliance list on a rule */}
+          <ol className="mt-12 lg:mt-0 text-start border-t border-white/20">
             {t.about.capabilities.cards.map((card, index) => (
-              <div
-                key={index}
-                className="p-6 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all cursor-default"
-              >
-                <span className="material-symbols-outlined text-tertiary-fixed-dim text-3xl mb-3 block">
-                  {card.icon}
-                </span>
-                <h4 className="text-sm md:text-base font-bold mb-2">
-                  {card.title}
-                </h4>
-                <p className="text-xs opacity-90 leading-relaxed">
-                  {card.desc}
-                </p>
-              </div>
+              <li key={index} className="flex items-start gap-5 py-6 border-b border-white/20">
+                <span className="material-symbols-outlined text-[#F87B1B] text-4xl flex-shrink-0">{card.icon}</span>
+                <div>
+                  <h4 className="font-display text-2xl md:text-3xl font-bold uppercase leading-none mb-2">{card.title}</h4>
+                  <p className="text-base md:text-lg text-white/90 leading-relaxed">{card.desc}</p>
+                </div>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </div>
     </section>

@@ -10,29 +10,25 @@ export function AboutOverview() {
 
   return (
     <section className="py-16 md:py-section-gap px-4 md:px-margin-desktop max-w-container-max mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-section-gap items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         {/* Text Description */}
-        <div className="space-y-6 text-start">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight">
-            {t.about.overview.title}
-          </h2>
-          <p className="text-lg text-secondary leading-relaxed">
-            {t.about.overview.p1}
-          </p>
-          <p className="text-sm md:text-base text-secondary leading-relaxed">
-            {t.about.overview.p2}
-          </p>
+        <div className="lg:col-span-7 space-y-6 text-start">
+          <h2 className="display-title text-4xl md:text-6xl text-primary">{t.about.overview.title}</h2>
+          <p className="text-xl md:text-2xl text-on-surface leading-relaxed">{t.about.overview.p1}</p>
+          <p className="text-lg md:text-xl text-secondary leading-relaxed">{t.about.overview.p2}</p>
         </div>
 
         {/* Facility Image */}
-        <div className="rounded-2xl overflow-hidden shadow-sm border border-outline-variant/30 relative h-[400px] w-full">
-          <Image
-            src={siteImages.aboutOverview}
-            alt={t.about.overview.imgAlt}
-            fill
-            sizes="(max-w-1024px) 100vw, 50vw"
-            className="object-cover"
-          />
+        <div className="lg:col-span-5 photo-frame me-4">
+          <div className="relative h-[340px] md:h-[440px] w-full overflow-hidden">
+            <Image
+              src={siteImages.aboutOverview}
+              alt={t.about.overview.imgAlt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>

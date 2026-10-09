@@ -27,7 +27,7 @@ export function QuoteHero() {
           <span className={`material-symbols-outlined text-[14px] mx-1 ${locale === "ar" ? "rotate-180" : ""}`}>chevron_right</span>
           <span className="font-bold">{t.quotePage.breadcrumbs.current}</span>
         </nav>
-        <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-4 max-w-2xl">
+        <h1 className="display-title text-5xl md:text-7xl max-w-4xl mb-6">
           {t.quotePage.hero.title}
         </h1>
         <p className="text-base md:text-lg max-w-2xl leading-relaxed">
