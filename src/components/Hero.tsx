@@ -11,7 +11,7 @@ export function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-[82vh] flex items-end overflow-hidden">
+    <section className="relative min-h-[calc(100svh-5rem)] flex items-center md:items-end overflow-hidden">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -28,16 +28,16 @@ export function Hero() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 hero-text-shadow px-4 md:px-margin-desktop max-w-container-max mx-auto w-full pb-16 md:pb-24 pt-32">
-        <div className="max-w-4xl text-start border-s-4 border-[#F87B1B] ps-5 md:ps-8">
-          <p className="font-display text-lg md:text-2xl font-semibold uppercase tracking-[0.2em] text-[#F87B1B] mb-4">
+      <div className="relative z-10 hero-text-shadow px-4 md:px-margin-desktop max-w-container-max mx-auto w-full py-8 sm:py-10 md:py-12 lg:pt-12 lg:pb-14">
+        <div className="max-w-4xl text-start border-s-4 border-[#F87B1B] ps-4 md:ps-8">
+          <p className="font-display text-sm sm:text-base md:text-lg lg:text-xl font-semibold uppercase tracking-[0.2em] text-[#F87B1B] mb-2 md:mb-4">
             {t.hero.overline}
           </p>
-          <h1 className="display-title text-5xl sm:text-6xl md:text-7xl text-white mb-6">
+          <h1 className="display-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white mb-4 md:mb-6">
             {t.hero.title}
           </h1>
-          <p className="text-lg md:text-2xl text-white/95 max-w-2xl leading-relaxed mb-8">{t.hero.subtitle}</p>
-          <div className="flex flex-wrap items-center gap-4">
+          <p className="text-base sm:text-lg md:text-xl text-white/95 max-w-3xl leading-relaxed mb-5 md:mb-6">{t.hero.subtitle}</p>
+          <div className="flex flex-wrap items-center gap-3 md:gap-4">
             {/*
               -- Request a Quote Button (temporarily replaced by WhatsApp / Call) --
 

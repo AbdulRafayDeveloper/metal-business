@@ -28,7 +28,7 @@ interface ContactActionsProps {
 const sizeClasses: Record<ContactActionsSize, string> = {
   sm: "px-4 py-2.5 text-sm gap-2",
   md: "px-6 py-3.5 text-sm md:text-base gap-2.5",
-  lg: "px-8 py-4 text-base md:text-lg gap-3",
+  lg: "px-4 py-3 gap-2 text-base sm:px-6 sm:py-3.5 sm:gap-2.5 md:px-8 md:py-4 md:gap-3 md:text-lg",
 };
 
 const callVariantClasses: Record<ContactActionsVariant, string> = {
