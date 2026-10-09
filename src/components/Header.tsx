@@ -44,8 +44,8 @@ export function Header() {
     { href: "/", label: t.nav.home, icon: "home", active: isHome },
     { href: "/about", label: t.nav.aboutUs, icon: "info", active: isAbout },
     { href: "/products", label: t.nav.products, icon: "inventory_2", active: isProducts },
-    { href: "/pre-engineered-buildings", label: t.nav.peb, icon: "warehouse", active: isPeb },
-    { href: "/petrol-pump-canopy", label: t.nav.canopy, icon: "local_gas_station", active: isCanopy },
+    { href: "/pre-engineered-buildings", label: t.nav.peb, shortLabel: t.nav.pebShort, icon: "warehouse", active: isPeb },
+    { href: "/petrol-pump-canopy", label: t.nav.canopy, shortLabel: t.nav.canopyShort, icon: "local_gas_station", active: isCanopy },
     { href: "/contact", label: t.nav.contact, icon: "call", active: isContact },
   ];
 
@@ -69,30 +69,37 @@ export function Header() {
         <Logo size="md" variant="footer" />
 
         {/* Desktop Navigation - High contrast white text with gold active indicator */}
-        <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`pb-1 font-bold text-sm tracking-wide transition-all inline-flex items-center gap-1.5 ${
+              className={`pb-1 font-bold text-[13px] xl:text-sm tracking-wide whitespace-nowrap transition-all inline-flex items-center gap-1.5 ${
                 link.active ? "active-nav-link font-extrabold" : "hover:text-[#F87B1B]"
               }`}
               style={{ color: link.active ? "#F87B1B" : "#ffffff" }}
             >
               <span
-                className="material-symbols-outlined text-[20px]"
+                className="material-symbols-outlined text-[20px] hidden xl:inline"
                 style={{ fontVariationSettings: link.active ? "'FILL' 1" : "'FILL' 0" }}
                 aria-hidden="true"
               >
                 {link.icon}
               </span>
-              {link.label}
+              {link.shortLabel ? (
+                <>
+                  <span className="xl:hidden">{link.shortLabel}</span>
+                  <span className="hidden xl:inline">{link.label}</span>
+                </>
+              ) : (
+                link.label
+              )}
             </Link>
           ))}
         </nav>
 
         {/* Action Panel */}
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-6 flex-shrink-0">
           {/*
             -- Language Switcher (temporarily disabled; English only for now) --
             Requires `locale` and `setLocale` from useLanguage().

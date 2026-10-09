@@ -53,7 +53,10 @@ export function Hero() {
             */}
             <ContactActions variant="onDark" size="lg" />
             <Link href="/products">
-              <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold px-8 py-4 rounded-xl hover:bg-white/20 transition-all cursor-pointer inline-flex">
+              <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold px-8 py-4 rounded-xl hover:bg-white/20 transition-all cursor-pointer inline-flex items-center gap-2">
+                <span className="material-symbols-outlined text-xl">
+                  inventory_2
+                </span>
                 {t.hero.exploreProducts}
               </span>
             </Link>
