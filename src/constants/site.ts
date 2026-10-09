@@ -14,7 +14,7 @@ export const siteConfig = {
   legalName: "AluTrade Global Metal Trading (Pvt.) Ltd.",
   description:
     "AluTrade Global is a leading international aluminum and non-ferrous metal trading company supplying high-purity aluminum scrap, copper, zinc, and recyclable metals to manufacturers across 50+ countries.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://best-metal-trades.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://metal-business-3.vercel.app",
   ogImage: "/opengraph-image",
   contact: {
     email: "contact@alutradeglobal.com",
@@ -36,5 +36,5 @@ export function getBaseUrl(): string {
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL}`;
   }
-  return "https://best-metal-trades.vercel.app";
+  return "https://metal-business-3.vercel.app";
 }
