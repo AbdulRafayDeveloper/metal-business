@@ -33,7 +33,7 @@ export const organizationEntity = {
       telephone: siteConfig.contact.phone,
       contactType: "customer service",
       email: siteConfig.contact.email,
-      availableLanguage: ["English", "Arabic"],
+      availableLanguage: ["English", "Urdu"],
       areaServed: "Worldwide",
     },
     {
@@ -41,7 +41,7 @@ export const organizationEntity = {
       telephone: siteConfig.contact.phone,
       contactType: "sales",
       email: siteConfig.contact.tradeEmail,
-      availableLanguage: ["English", "Arabic"],
+      availableLanguage: ["English", "Urdu"],
       areaServed: "Worldwide",
     },
   ],
@@ -76,7 +76,7 @@ export const websiteSchema = {
   description:
     "International Aluminum & Metal Trading — Supplying high-purity aluminum, copper, zinc, and recyclable metals globally.",
   publisher: { "@id": `${BASE_URL}/#organization` },
-  inLanguage: ["en-US", "ar-AE"],
+  inLanguage: ["en-US", "ar"],
   potentialAction: {
     "@type": "SearchAction",
     target: {

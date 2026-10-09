@@ -33,7 +33,7 @@ export function WhyHero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 px-4 md:px-margin-desktop max-w-container-max mx-auto w-full text-white text-start">
+      <div className="relative z-20 hero-text-shadow px-4 md:px-margin-desktop max-w-container-max mx-auto w-full text-white text-start">
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-white/90 mb-4">
           <Link className="hover:text-white transition-colors" href="/">

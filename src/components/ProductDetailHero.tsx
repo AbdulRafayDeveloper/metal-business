@@ -24,7 +24,7 @@ export function ProductDetailHero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-4 md:px-margin-desktop max-w-container-max mx-auto w-full text-on-primary text-start">
+      <div className="relative z-10 hero-text-shadow px-4 md:px-margin-desktop max-w-container-max mx-auto w-full text-on-primary text-start">
         <nav className="flex mb-6 text-on-primary/90 font-medium text-sm items-center gap-1">
           <Link className="hover:text-tertiary-fixed-dim transition-colors" href="/">
             {t.scrapDetail.breadcrumbs.home}

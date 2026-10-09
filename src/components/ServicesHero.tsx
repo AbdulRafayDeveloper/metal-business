@@ -24,7 +24,7 @@ export function ServicesHero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 px-4 md:px-margin-desktop max-w-container-max mx-auto w-full text-on-primary text-start">
+      <div className="relative z-20 hero-text-shadow px-4 md:px-margin-desktop max-w-container-max mx-auto w-full text-on-primary text-start">
         <nav aria-label="Breadcrumb" className="mb-4 flex items-center gap-1 text-sm opacity-95">
           <Link className="hover:underline" href="/">
             {t.servicesPage.breadcrumbs.home}

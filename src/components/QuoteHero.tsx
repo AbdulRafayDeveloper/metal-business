@@ -21,7 +21,7 @@ export function QuoteHero() {
         />
         <div className="absolute inset-0 bg-primary-container opacity-80 z-10" style={{ background: "linear-gradient(rgba(27, 53, 118, 0.85), rgba(17, 34, 78, 0.9))" }} />
       </div>
-      <div className="relative z-20 px-4 md:px-margin-desktop max-w-container-max mx-auto w-full text-white text-start">
+      <div className="relative z-20 hero-text-shadow px-4 md:px-margin-desktop max-w-container-max mx-auto w-full text-white text-start">
         <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-1 text-sm opacity-95">
           <Link className="hover:underline" href="/">{t.quotePage.breadcrumbs.home}</Link>
           <span className={`material-symbols-outlined text-[14px] mx-1 ${locale === "ar" ? "rotate-180" : ""}`}>chevron_right</span>
@@ -30,7 +30,7 @@ export function QuoteHero() {
         <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-4 max-w-2xl">
           {t.quotePage.hero.title}
         </h1>
-        <p className="text-base md:text-lg opacity-90 max-w-2xl leading-relaxed">
+        <p className="text-base md:text-lg max-w-2xl leading-relaxed">
           {t.quotePage.hero.subtitle}
         </p>
       </div>

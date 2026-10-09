@@ -3,9 +3,11 @@
 import React from "react";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
+import { siteConfig } from "@/constants/site";
 
 export function ContactMap() {
   const { t } = useLanguage();
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.contact.address)}`;
 
   return (
     <div className="relative w-full h-[320px] rounded-[20px] overflow-hidden border border-outline-variant/30 group">
@@ -23,7 +25,7 @@ export function ContactMap() {
 
       {/* Floating maps indicator */}
       <a
-        href="https://maps.google.com"
+        href={mapsUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="absolute bottom-6 left-6 right-6 p-4 bg-white/95 backdrop-blur-sm rounded-xl flex justify-between items-center shadow-lg border border-outline-variant/30 cursor-pointer z-10 hover:opacity-90 transition-opacity"

@@ -24,7 +24,7 @@ export function AboutHero() {
       </div>
 
       {/* Hero Content Overlay */}
-      <div className="relative z-10 px-4 md:px-margin-desktop max-w-container-max mx-auto w-full text-on-primary text-start">
+      <div className="relative z-10 hero-text-shadow px-4 md:px-margin-desktop max-w-container-max mx-auto w-full text-on-primary text-start">
         <nav aria-label="Breadcrumb" className="flex text-sm mb-2 opacity-95">
           <ol className="flex list-none p-0 items-center gap-1">
             <li className="flex items-center">

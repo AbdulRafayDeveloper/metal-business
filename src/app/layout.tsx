@@ -41,7 +41,9 @@ export const metadata: Metadata = {
     "metal export",
     "industrial metals",
     "AluTrade Global",
-    "aluminum supplier UAE",
+    "aluminum supplier Pakistan",
+    "metal trading company Pakistan",
+    "scrap metal exporter Pakistan",
   ],
   authors: [{ name: siteConfig.name, url: BASE_URL }],
   creator: siteConfig.name,
@@ -61,7 +63,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    alternateLocale: ["ar_AE"],
     siteName: siteConfig.name,
     title:
       `${siteConfig.name} | International Aluminum & Metal Trading Company`,
@@ -91,7 +92,7 @@ export const metadata: Metadata = {
     canonical: BASE_URL,
     languages: {
       "en-US": BASE_URL,
-      "ar-AE": `${BASE_URL}?lang=ar`,
+      "ar": `${BASE_URL}?lang=ar`,
     },
   },
   icons: {

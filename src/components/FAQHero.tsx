@@ -24,7 +24,7 @@ export function FAQHero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-4 md:px-margin-desktop max-w-container-max mx-auto w-full text-on-primary text-start">
+      <div className="relative z-10 hero-text-shadow px-4 md:px-margin-desktop max-w-container-max mx-auto w-full text-on-primary text-start">
         <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-sm opacity-95 mb-4">
           <Link className="hover:underline" href="/">
             {t.faqPage.breadcrumbs.home}
@@ -37,7 +37,7 @@ export function FAQHero() {
         <h1 className="text-3xl md:text-5xl font-extrabold max-w-2xl leading-tight">
           {t.faqPage.hero.title}
         </h1>
-        <p className="mt-4 text-base md:text-lg max-w-xl opacity-90 leading-relaxed">
+        <p className="mt-4 text-base md:text-lg max-w-xl leading-relaxed">
           {t.faqPage.hero.subtitle}
         </p>
       </div>

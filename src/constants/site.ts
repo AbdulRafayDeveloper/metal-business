@@ -11,7 +11,7 @@ export const contactNumber = {
 
 export const siteConfig = {
   name: "AluTrade Global",
-  legalName: "AluTrade Global Metal Trading Ltd.",
+  legalName: "AluTrade Global Metal Trading (Pvt.) Ltd.",
   description:
     "AluTrade Global is a leading international aluminum and non-ferrous metal trading company supplying high-purity aluminum scrap, copper, zinc, and recyclable metals to manufacturers across 50+ countries.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://best-metal-trades.vercel.app",
@@ -20,9 +20,9 @@ export const siteConfig = {
     email: "contact@alutradeglobal.com",
     tradeEmail: "trade@alutradeglobal.com",
     phone: contactNumber.display,
-    address: "Industrial District 4, Building 12, Maritime Free Zone, Dubai, UAE",
-    country: "AE",
-    city: "Dubai",
+    address: "Plot 12, Industrial Area, Lahore, Punjab, Pakistan",
+    country: "PK",
+    city: "Lahore",
   },
 };
 

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { ContactHero } from "@/components/ContactHero";
-import { ContactForm } from "@/components/ContactForm";
+// import { ContactForm } from "@/components/ContactForm"; // temporarily disabled: direct contact only (call / WhatsApp / email)
+import { ContactChannels } from "@/components/ContactChannels";
 import { ContactInfo } from "@/components/ContactInfo";
 import { ContactMap } from "@/components/ContactMap";
 import { Footer } from "@/components/Footer";
@@ -16,16 +17,16 @@ const BASE_URL = getBaseUrl();
 const PAGE_URL = `${BASE_URL}/contact`;
 
 export const metadata: Metadata = {
-  title: `Contact Us | ${siteConfig.name} – Trading Desk & Corporate HQ`,
+  title: `Contact Us | ${siteConfig.name} – Metal Trading Desk, Pakistan`,
   description:
-    `Get in touch with ${siteConfig.name}'s trading desk in Dubai, UAE. Inquire about aluminum scrap pricing, bulk copper/zinc orders, logistics support, and global partnerships.`,
+    `Call, WhatsApp, or email ${siteConfig.name}'s trading desk in ${siteConfig.contact.city}, Pakistan. Inquire about aluminum scrap pricing, bulk copper/zinc orders, logistics support, and export partnerships.`,
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: `Contact Us | ${siteConfig.name} – Trading Desk & Corporate HQ`,
+    title: `Contact Us | ${siteConfig.name} – Metal Trading Desk, Pakistan`,
     description:
-      "Connect with our global trading desk. Contact details, office location in Dubai Free Zone, business hours, and instant inquiry form.",
+      "Reach our Pakistan trading desk directly by phone, WhatsApp, or email. Head office address, business hours, and instant contact options.",
     url: PAGE_URL,
     type: "website",
     images: [
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `Contact Us | ${siteConfig.name}`,
     description:
-      "Connect with our global trading desk. Fast 24-hour response for all commercial and technical inquiries.",
+      "Call or WhatsApp our Pakistan trading desk for fast answers to all commercial and technical inquiries.",
     images: [`${BASE_URL}/og-image.png`],
   },
 };
@@ -55,7 +56,7 @@ export default function ContactPage() {
   const pageSchema = buildWebPageSchema({
     name: `Contact Us | ${siteConfig.name}`,
     description:
-      `Get in touch with ${siteConfig.name}'s trading desk in Dubai, UAE.`,
+      `Call, WhatsApp, or email ${siteConfig.name}'s trading desk in ${siteConfig.contact.city}, Pakistan.`,
     url: PAGE_URL,
     type: "ContactPage",
   });
@@ -69,7 +70,12 @@ export default function ContactPage() {
         <ContactHero />
         <div className="max-w-[1280px] w-full mx-auto px-4 md:px-10 py-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-7">
+            {/*
+              -- Contact form (temporarily disabled; visitors contact us directly instead) --
+
             <ContactForm />
+            */}
+            <ContactChannels />
           </div>
           <div className="lg:col-span-5 space-y-6 mt-12 lg:mt-0">
             <ContactInfo />

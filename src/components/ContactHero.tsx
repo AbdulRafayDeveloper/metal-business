@@ -24,7 +24,7 @@ export function ContactHero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 text-center text-on-primary px-4">
+      <div className="relative z-20 hero-text-shadow text-center text-on-primary px-4">
         <nav aria-label="Breadcrumb" className="flex justify-center gap-1 text-sm opacity-90 mb-4 items-center">
           <Link className="hover:underline" href="/">
             {t.contact.breadcrumbs.home}
@@ -37,7 +37,7 @@ export function ContactHero() {
         <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
           {t.contact.hero.title}
         </h1>
-        <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg opacity-95 leading-relaxed">
+        <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
           {t.contact.hero.subtitle}
         </p>
       </div>

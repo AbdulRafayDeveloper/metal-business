@@ -28,7 +28,7 @@ export function Hero() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 px-4 md:px-margin-desktop max-w-container-max mx-auto w-full">
+      <div className="relative z-10 hero-text-shadow px-4 md:px-margin-desktop max-w-container-max mx-auto w-full">
         <div className="max-w-2xl text-start">
           <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight tracking-tight mb-6">
             {t.hero.title}

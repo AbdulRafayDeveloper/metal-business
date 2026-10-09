@@ -24,7 +24,7 @@ export function ProductsHero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 px-4 md:px-margin-desktop max-w-container-max mx-auto w-full text-on-primary text-start">
+      <div className="relative z-20 hero-text-shadow px-4 md:px-margin-desktop max-w-container-max mx-auto w-full text-on-primary text-start">
         <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-sm opacity-95 mb-6">
           <Link className="hover:underline" href="/">
             {t.productsPage.breadcrumbs.home}
@@ -37,7 +37,7 @@ export function ProductsHero() {
         <h1 className="text-3xl md:text-5xl font-extrabold max-w-2xl leading-tight mb-6">
           {t.productsPage.hero.title}
         </h1>
-        <p className="text-base md:text-lg max-w-xl opacity-90 leading-relaxed">
+        <p className="text-base md:text-lg max-w-xl leading-relaxed">
           {t.productsPage.hero.subtitle}
         </p>
       </div>

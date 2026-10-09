@@ -48,9 +48,16 @@ Section components live flat in `src/components/` (one file per section, named `
 
 - `src/constants/translations.ts` is a single object with `en` and `ar` keys (~1700 lines). The context type is `typeof translations.en`, so **the `ar` branch must mirror the `en` structure exactly** or the type breaks. All UI copy, alt text, and Material icon names live here; components never hardcode user-facing strings.
 - `src/providers/LanguageProvider.tsx` (wrapped around everything in `layout.tsx`) holds `locale` in `useState("en")`. It is not persisted and not reflected in the URL. On change it sets `lang` and `dir` on `<html>` and on a wrapper `<div>`.
-- Components call `useLanguage()` from `src/context/LanguageContext.tsx` to get `{ locale, setLocale, t }`. The language toggle buttons are in `Header.tsx`.
+- Components call `useLanguage()` from `src/context/LanguageContext.tsx` to get `{ locale, setLocale, t }`. The EN/AR toggle buttons in `Header.tsx` are currently commented out (site is English-only for now); uncomment them and re-add `locale`/`setLocale` to the destructure to re-enable.
 - Because locale is client state, `metadata`, sitemap, and JSON-LD are English only. Server-side code that needs copy imports `translations` directly and reads `translations.en` (see `faqs/page.tsx`).
 - RTL support: use Tailwind logical utilities (`start-0`, `text-start`, `ps-*`, `ms-*`) rather than `left/right`, flip directional arrow icons with `locale === "ar" ? "rotate-180" : ""`, and add `[dir="rtl"]` overrides in `globals.css` for anything CSS-only.
+
+### Contact actions
+
+- The business phone number lives once in `contactNumber` in `src/constants/site.ts` (display, E.164, `wa.me` URL, `tel:` URL). Never hardcode it elsewhere.
+- `ContactActions` renders the WhatsApp + Call button pair; `WhatsAppFloat` is the fixed bottom-right button mounted in `layout.tsx`; `ContactChannels` is the Call / WhatsApp / Email card with copy buttons on the contact page.
+- Every former "Request a Quote" button (header, hero, CTA sections, product sidebar, footer) and the contact-page `ContactForm` are commented out in place, not deleted, with a note explaining how to restore them. The `/request-a-quote` route and `QuoteForm` still exist but nothing links to them.
+- Business identity is Pakistan (Lahore head office, PKT hours, Karachi/Port Qasim/Gwadar ports). The street address is a placeholder in `siteConfig.contact.address` and the translations until the owner supplies the real one.
 
 ### SEO plumbing
 

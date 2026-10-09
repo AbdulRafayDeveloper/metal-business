@@ -112,6 +112,7 @@ export function QuoteForm() {
                   {t.quotePage.form.lblCountry}
                 </label>
                 <select id="quote-country" className={inputCls}>
+                  <option>Pakistan</option>
                   <option>United Arab Emirates</option>
                   <option>United States</option>
                   <option>United Kingdom</option>

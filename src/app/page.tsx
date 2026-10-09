@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     canonical: BASE_URL,
     languages: {
       "en-US": BASE_URL,
-      "ar-AE": `${BASE_URL}?lang=ar`,
+      "ar": `${BASE_URL}?lang=ar`,
     },
   },
   openGraph: {
