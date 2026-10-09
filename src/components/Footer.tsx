@@ -23,8 +23,11 @@ export function Footer() {
     // { label: t.nav.requestQuote, href: "/request-a-quote" }, // temporarily hidden (WhatsApp / Call instead)
   ];
 
+  // Keep the footer column short; the full range lives on the products page.
+  const FOOTER_FABRICATION_LIMIT = 8;
   const fabricationLinks = t.productsPage.categories
     .filter((c) => c.group === "fabrication")
+    .slice(0, FOOTER_FABRICATION_LIMIT)
     .map((c) => ({ label: c.title, href: `/products#${c.id}` }));
 
   const linkClass =
@@ -95,6 +98,14 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  className={`${linkClass} font-semibold text-[#F87B1B] hover:text-white`}
+                  href="/products"
+                >
+                  {t.homePage.products.viewAll}
+                </Link>
+              </li>
             </ul>
           </div>
 
