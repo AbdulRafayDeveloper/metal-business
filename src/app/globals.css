@@ -205,6 +205,11 @@ html {
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
+.hero-text-shadow a,
+.hero-text-shadow button {
+  text-shadow: none;
+}
+
 /* Stat card divider */
 .stat-card-divider {
   border-right: 1px solid #B8BDC7;
