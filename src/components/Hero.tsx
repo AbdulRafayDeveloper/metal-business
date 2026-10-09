@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import { siteImages } from "@/constants/images";
 import { ContactActions } from "@/components/ContactActions";
 
 export function Hero() {
@@ -15,7 +16,7 @@ export function Hero() {
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero_metal_trading.png"
+          src={siteImages.homeHero}
           alt={t.hero.bgAlt}
           fill
           priority

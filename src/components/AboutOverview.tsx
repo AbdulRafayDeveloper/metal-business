@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
+import { siteImages } from "@/constants/images";
 
 export function AboutOverview() {
   const { t } = useLanguage();
@@ -26,7 +27,7 @@ export function AboutOverview() {
         {/* Facility Image */}
         <div className="rounded-2xl overflow-hidden shadow-sm border border-outline-variant/30 relative h-[400px] w-full">
           <Image
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_arvvOjey8tUU3I5GYOm64xoTQaMCMSyHkNSDeoCNMTIPYYAZYLnKw9_BaBgnEyiZrb4eaI1r99sI-qllWJTwFRUxkVVjsaNv0jA5OxrGziBp1HrLN9l2rG6RmbmdrvsR8m9pKDsAz1dZ82Ce0NEhQP4SWU4a10HendQ6j86hzeHSuoaWMqSTXPB7SnwlsDTflxpNVGbI3f3132uPZljRAS3BIqvK7U4ux-em5y_lG8QVrKaTd4oE"
+            src={siteImages.aboutOverview}
             alt={t.about.overview.imgAlt}
             fill
             sizes="(max-w-1024px) 100vw, 50vw"

@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import { siteImages } from "@/constants/images";
 
 export function AboutHero() {
   const { locale, t } = useLanguage();
@@ -13,7 +14,7 @@ export function AboutHero() {
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiLBfWErtFmmj_oH6jGmPPbYrEHEdvyeC6jX-qImVlh7WqL1J9Xi14qyL1Aanaa_GHdlzXkym4opNjOXbOJuupAztEVtsshye0YUIjMCGWY1KlPPbamwIiE2kSOiZPBQuT-6ypkTeGHHcq39TW1_d5NjGfFolDtjwZGBawwJ3EtYLdWm1ypu5L8eS4VrwxMkXyLm88FFeMzhgkhtLkFbsPSZJiosySzwJ7W1iV5vRE4kxRZVm6KChF"
+          src={siteImages.aboutHero}
           alt={t.about.hero.bgAlt}
           fill
           priority

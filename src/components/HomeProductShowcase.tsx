@@ -1,10 +1,24 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import { productImages, type ProductId } from "@/constants/images";
 
-/** Home page product showcase: icon cards for every product category. */
+/** Photo per card, in the same order as translations.homePage.products.items */
+const cardImageIds: ProductId[] = [
+  "aluminum-scrap",
+  "copper-scrap",
+  "zinc",
+  "recyclable-metals",
+  "steel-sheets",
+  "steel-bars",
+  "steel-beams",
+  "steel-coils",
+];
+
+/** Home page product showcase: photo cards for every product category. */
 export function HomeProductShowcase() {
   const { locale, t } = useLanguage();
   const p = t.homePage.products;
@@ -27,21 +41,32 @@ export function HomeProductShowcase() {
             <Link
               key={index}
               href={item.href}
-              className="group bg-white rounded-2xl border border-outline-variant shadow-sm premium-card hover:border-primary/40 p-6 flex flex-col text-start"
+              className="group bg-white rounded-2xl border border-outline-variant shadow-sm premium-card hover:border-primary/40 overflow-hidden flex flex-col text-start"
             >
-              <span className="w-14 h-14 rounded-xl bg-surface-container-high text-primary group-hover:bg-primary group-hover:text-[#F87B1B] transition-colors flex items-center justify-center mb-5">
-                <span className="material-symbols-outlined text-3xl">{item.icon}</span>
-              </span>
-              <h3 className="text-lg font-bold text-primary mb-2">{item.title}</h3>
-              <p className="text-sm text-secondary leading-relaxed flex-grow">{item.description}</p>
-              <span className="mt-5 text-primary font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                {p.learnMore}
-                <span
-                  className={`material-symbols-outlined text-base ${locale === "ar" ? "rotate-180" : ""}`}
-                >
-                  chevron_right
+              <div className="relative h-44 w-full overflow-hidden bg-surface-container-high">
+                <Image
+                  src={productImages[cardImageIds[index]]}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <span className="absolute bottom-3 start-3 w-11 h-11 rounded-xl bg-primary text-[#F87B1B] shadow-lg flex items-center justify-center">
+                  <span className="material-symbols-outlined text-2xl">{item.icon}</span>
                 </span>
-              </span>
+              </div>
+              <div className="p-5 flex flex-col flex-grow">
+                <h3 className="text-lg font-bold text-primary mb-2">{item.title}</h3>
+                <p className="text-sm text-secondary leading-relaxed flex-grow">{item.description}</p>
+                <span className="mt-4 text-primary font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                  {p.learnMore}
+                  <span
+                    className={`material-symbols-outlined text-base ${locale === "ar" ? "rotate-180" : ""}`}
+                  >
+                    chevron_right
+                  </span>
+                </span>
+              </div>
             </Link>
           ))}
         </div>

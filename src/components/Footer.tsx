@@ -11,6 +11,7 @@ export function Footer() {
 
   const companyNav = [
     { label: t.nav.home, href: "/" },
+    { label: t.nav.aboutUs, href: "/about" },
     { label: t.nav.whyChooseUs, href: "/why-choose-us" },
     { label: t.nav.faqs, href: "/faqs" },
     { label: t.nav.contact, href: "/contact" },
@@ -138,6 +139,10 @@ export function Footer() {
           <span className="text-white/20">|</span>
           <Link className="hover:text-[#F87B1B] transition-colors" href="/terms-of-service">
             Terms of Service
+          </Link>
+          <span className="text-white/20">|</span>
+          <Link className="hover:text-[#F87B1B] transition-colors" href="/image-credits">
+            Image Credits
           </Link>
         </div>
       </div>

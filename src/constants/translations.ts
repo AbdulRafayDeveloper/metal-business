@@ -250,8 +250,8 @@ export const translations = {
       },
       overview: {
         title: "Pioneering Global Metal Solutions",
-        p1: "AluTrade Global stands as a premier international partner in non-ferrous metal trading and industrial scrap management. We bridge the gap between primary producers and downstream manufacturers with precision and efficiency.",
-        p2: "Our expertise spans the entire value chain, from sourcing high-purity aluminum alloys to managing complex logistics for global foundries. With a focus on structural stability and material integrity, we ensure that every metric ton delivered meets the rigorous standards of modern industry.",
+        p1: "AluTrade Global is a Lahore, Pakistan based metal trading and steel fabrication company. For over 25 years we have supplied aluminum, copper, zinc and steel to manufacturers, builders and recyclers across Pakistan, and exported non-ferrous metals to partners abroad.",
+        p2: "Our expertise spans the entire value chain: sourcing high-purity scrap and prime metal, fabricating cable trays, racks, grating, shuttering and pre-engineered steel buildings, and delivering nationwide. Every metric ton and every fabricated piece is inspected to meet the standards of modern industry.",
         imgAlt: "Smelting facility with glowing furnaces.",
       },
       missionVision: {
@@ -336,8 +336,8 @@ export const translations = {
           },
           {
             value: "50+",
-            label: "Countries Served",
-            desc: "A truly international footprint with localized logistics expertise.",
+            label: "Cities Served",
+            desc: "Nationwide delivery across Pakistan plus export partners abroad.",
           },
           {
             value: "450k",
@@ -349,7 +349,7 @@ export const translations = {
       gallery: {
         bgAlts: [
           "High-quality aluminum ingots stacked perfectly in a warehouse.",
-          "Close-up of industrial metal shredding machinery.",
+          "Molten metal being poured from a foundry ladle.",
           "Cargo ship docked at an industrial port.",
           "Laboratory technician analyzing chemical composition.",
           "Row of heavy-duty distribution trucks.",
@@ -1405,8 +1405,8 @@ export const translations = {
       },
       overview: {
         title: "ريادة الحلول المعدنية العالمية",
-        p1: "تقف ألوتريد جلوبال كشريك دولي رائد في تجارة المعادن غير الحديدية وإدارة الخردة الصناعية. نحن نسد الفجوة بين المنتجين الرئيسيين والمصنعين بكفاءة ودقة.",
-        p2: "تمتد خبرتنا عبر سلسلة القيمة بأكملها - من توريد سبائك الألومنيوم عالية النقاء إلى إدارة الخدمات اللوجستية المعقدة للمسابك العالمية. مع التركيز على الاستقرار الهيكلي وسلامة المواد، نضمن أن كل طن متري يتم تسليمه يلبي المعايير الصارمة للصناعة الحديثة.",
+        p1: "ألوتريد جلوبال شركة لتجارة المعادن وتصنيع الفولاذ مقرها لاهور، باكستان. على مدى أكثر من 25 عامًا نورّد الألومنيوم والنحاس والزنك والفولاذ للمصنّعين والمقاولين وشركات إعادة التدوير في جميع أنحاء باكستان، ونصدّر المعادن غير الحديدية إلى شركائنا في الخارج.",
+        p2: "تمتد خبرتنا عبر سلسلة القيمة بأكملها: توريد الخردة عالية النقاء والمعادن الأولية، وتصنيع حوامل الكابلات والرفوف والشبك المعدني والشدات والمباني الفولاذية الجاهزة، والتوصيل إلى جميع أنحاء البلاد. يتم فحص كل طن متري وكل قطعة مصنّعة لتلبية معايير الصناعة الحديثة.",
         imgAlt: "مرفق صهر مع أفران متوهجة.",
       },
       missionVision: {
@@ -1491,8 +1491,8 @@ export const translations = {
           },
           {
             value: "+50",
-            label: "بلدان نخدمها",
-            desc: "بصمة دولية حقيقية مع خبرة لوجستية محلية.",
+            label: "مدن نخدمها",
+            desc: "توصيل إلى جميع أنحاء باكستان بالإضافة إلى شركاء التصدير في الخارج.",
           },
           {
             value: "450 ألف",

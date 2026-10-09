@@ -66,6 +66,12 @@ Section components live flat in `src/components/` (one file per section, named `
 - `robots.ts`, `manifest.ts`, `icon.tsx`, `apple-icon.tsx`, `opengraph-image.tsx`, `twitter-image.tsx` are generated metadata routes. The static PNG equivalents in `public/` come from `scripts/generate-brand-assets.js`; regenerate rather than hand-edit them.
 - `next.config.ts` strips `console.*` in production, sets security headers, and allows remote `next/image` sources only from `lh3.googleusercontent.com` (the stock imagery host). Add any new remote host there.
 
+### Photos
+
+- All site photography is local under `public/images/{products,site}/` and referenced only through `src/constants/images.ts` (`productImages` keyed by product id, `siteImages` for hero/about/detail/gallery). Never hardcode image URLs in components; the old `lh3.googleusercontent.com` stock links are gone.
+- Photos are Unsplash-licensed and optimized JPEGs (about 1400px wide for cards, 2000px for heroes). Attribution lives in `src/constants/imageCredits.ts` and is rendered at `/image-credits` (linked from the footer, `noindex`). When adding or replacing a photo, add a credit entry too.
+- `/about` assembles the existing About* components (hero, overview, mission/vision, values, capabilities, trust stats, industries, gallery) plus the inquiry banner.
+
 ### Styling
 
 - Tailwind v4, CSS-first: there is no `tailwind.config`. Theme tokens are declared in `@theme` in `src/app/globals.css` and used as normal utilities. Palette is Material-style: `bg-primary` / navy `#11224E`, orange accent `bg-tertiary-fixed-dim` / `#F87B1B`, `bg-surface*`, `text-on-surface*`, etc. Layout tokens: `max-w-container-max` (1280px), `px-margin-desktop` (40px), `gap-gutter` (24px), `py-section-gap` (80px).

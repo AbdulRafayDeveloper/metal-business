@@ -30,6 +30,7 @@ export function Header() {
   const isHome = pathname === "/";
   const isProducts = pathname === "/products" || pathname.startsWith("/products/");
   const isContact = pathname === "/contact";
+  const isAbout = pathname === "/about";
   const isWhyUs = pathname === "/why-choose-us";
   const isFAQs = pathname === "/faqs";
   const isIndustries = pathname === "/industries";
@@ -38,6 +39,7 @@ export function Header() {
   // Header main nav links
   const navLinks = [
     { href: "/", label: t.nav.home, icon: "home", active: isHome },
+    { href: "/about", label: t.nav.aboutUs, icon: "info", active: isAbout },
     { href: "/products", label: t.nav.products, icon: "inventory_2", active: isProducts },
     { href: "/contact", label: t.nav.contact, icon: "call", active: isContact },
   ];

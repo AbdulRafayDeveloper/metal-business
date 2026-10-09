@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import { siteImages } from "@/constants/images";
 
 export function ProductDetailHero() {
   const { t } = useLanguage();
@@ -13,7 +14,7 @@ export function ProductDetailHero() {
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7tjEfn8MtlMoDtaMkfMOtBWwuZ1o8SZVQhL-AXfZvEid4LLupzd39W-OkSYujjd0teW-7c-W94dAOSAOaX7lTSDP7UfMjbHxO94W-XQ0w69uBF9dd-Qt7rdF5Fd3GqPjywBYlnFpen-tRH7XpOo1DQGiF_gxbQxA7Tj1rXVo_If4ZdlANTfNoN62v-jVKgMdT5JRhdG7EbPwzLlreupMim6t_9uiOhXn2W659j2-xtufi-mI9m7ke"
+          src={siteImages.detailHero}
           alt={t.scrapDetail.hero.bgAlt}
           fill
           priority
